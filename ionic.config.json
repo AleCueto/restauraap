@@ -1,0 +1,7 @@
+{
+  "name": "restauraap",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

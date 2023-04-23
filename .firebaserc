@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "restauraap-69c20": {
+      "hosting": {
+        "app": [
+          "restauraap-69c20"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "restauraap-69c20"
+  }
+}
