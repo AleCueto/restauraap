@@ -8,6 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   public appPages = [
+    { title: 'pages' + ".home" , url: '/folder/Home', icon: 'home' },
     { title: 'pages' + ".dish" , url: '/folder/Dish', icon: 'pizza' },
     { title: 'pages' + ".table" , url: '/folder/Table', icon: 'fast-food' },
     { title: 'pages' + ".waiter" , url: '/folder/Waiter', icon: 'people' },

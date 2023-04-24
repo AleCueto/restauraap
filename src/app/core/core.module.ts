@@ -19,10 +19,13 @@ import { FarmeableDetailedComponent } from './components/farmeable-detailed/farm
 import { DishesComponent } from './components/dishes/dishes.component';
 import { DishesDetailedComponent } from './components/dishes-detailed/dishes-detailed.component';
 import { DishListItemComponent } from './components/dish-list-item/dish-list-item.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { MainComponent } from './components/main/main.component';
 
 
 @NgModule({
-  declarations: [TileComponent, FarmComponent, TileDetailComponent, StoreComponent, FarmeableSelectableComponent, FarmListComponent, AboutComponent, FarmDetailedComponent, FarmeableCreatorComponent, FarmeableEditableComponent, FarmeableDetailedComponent, DishesComponent, DishesDetailedComponent, DishListItemComponent],
+  declarations: [TileComponent, FarmComponent, TileDetailComponent, StoreComponent, FarmeableSelectableComponent, FarmListComponent, AboutComponent, FarmDetailedComponent, FarmeableCreatorComponent, FarmeableEditableComponent, FarmeableDetailedComponent, DishesComponent, DishesDetailedComponent, DishListItemComponent, LoginComponent, RegisterComponent, MainComponent],
   imports: [
     CommonModule,
     IonicModule,
@@ -59,7 +62,10 @@ import { DishListItemComponent } from './components/dish-list-item/dish-list-ite
     FarmeableDetailedComponent,
     DishesComponent,
     DishesDetailedComponent,
-    DishListItemComponent
+    DishListItemComponent,
+    LoginComponent,
+    RegisterComponent,
+    MainComponent
     ]
 })
 export class CoreModule { 
