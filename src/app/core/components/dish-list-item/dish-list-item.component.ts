@@ -5,6 +5,7 @@ import { DishesService } from '../../services/dishes.service';
 import { DishesDetailedComponent } from '../dishes-detailed/dishes-detailed.component';
 import { ImageService } from '../../services/image.service';
 import { error } from 'console';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-dish-list-item',
@@ -21,7 +22,8 @@ export class DishListItemComponent implements OnInit {
     private dishesService:DishesService,
     private alert:AlertController,
     private modal:ModalController,
-    public imageService:ImageService
+    public imageService:ImageService,
+    private userService:UserService
 
   ) { }
 
@@ -84,6 +86,7 @@ export class DishListItemComponent implements OnInit {
       if (result && result.data) {
         switch (result.data.mode) {
           case 'New':
+            console.log(result.data.dish)
             this.dishesService.addDish(result.data.dish);
             break;
           case 'Edit':

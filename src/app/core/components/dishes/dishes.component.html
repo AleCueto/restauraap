@@ -2,7 +2,9 @@
   <ion-button  (click)="onNewDish()" style="margin:10px;width:50px;height:50px;--border-radius:50%" slot="start" icon-only><ion-icon style="zoom:2" name="add-outline"></ion-icon></ion-button>
 </ion-item>
 <ion-list>
-  <ion-item *ngFor="let i of dishes">
-  <app-dish-list-item [dishInput]="i"></app-dish-list-item>
-  </ion-item>
+  <div *ngFor="let i of dishes">
+    <ion-item *ngIf="checkDishBelong(i)">
+      <app-dish-list-item [dishInput]="i"></app-dish-list-item>
+    </ion-item>
+  </div>
 </ion-list>

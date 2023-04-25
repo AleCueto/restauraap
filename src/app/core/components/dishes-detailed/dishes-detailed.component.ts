@@ -4,6 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { Dish } from '../../models/dish.model';
 import { Subscription, throwError } from 'rxjs';
 import { ImageService } from '../../services/image.service';
+import { UserService } from '../../services/user.service';
 
 
 @Component({
@@ -31,7 +32,7 @@ export class DishesDetailedComponent implements OnInit {
   constructor(
     private fb:FormBuilder,
     private modal:ModalController,
-    private imagesService:ImageService
+    private imagesService:ImageService,
   ) {
     this.subsr = this.imagesService.images$.subscribe(data=>this.images = data);
 

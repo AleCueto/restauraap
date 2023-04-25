@@ -25,4 +25,14 @@ export class UserService {
     return signOut(this.auth)
   }
 
+  getUid():string {
+    if(this.auth.currentUser?.uid){
+      return this.auth.currentUser?.uid;
+    }
+    else{
+      return ""
+    }
+
+  }
+
 }

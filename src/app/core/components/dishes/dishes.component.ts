@@ -4,6 +4,7 @@ import { Dish } from '../../models/dish.model';
 import { AlertController, ModalController } from '@ionic/angular';
 import { DishesService } from '../../services/dishes.service';
 import { ImageService } from '../../services/image.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-dishes',
@@ -18,7 +19,8 @@ export class DishesComponent implements OnInit {
     private modal:ModalController,
     private alert:AlertController,
     private dishesService:DishesService,
-    private imageService:ImageService
+    private imageService:ImageService,
+    private userService:UserService
   ) { 
 
     
@@ -67,8 +69,14 @@ export class DishesComponent implements OnInit {
     this.presentDishForm(null);  
   }
 
-
-
+  checkDishBelong(dish:Dish){
+    if(dish.idRestaurant == this.userService.getUid()){
+      return true
+    } else{
+      console.log("dish.idRestaurant: " + dish.idRestaurant  + "||" + "user UID: " + this.userService.getUid())
+      return false
+    }
+  }
 
 
 }

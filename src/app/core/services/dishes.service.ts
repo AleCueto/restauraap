@@ -2,16 +2,21 @@ import { Injectable } from '@angular/core';
 import { Firestore, collection, addDoc, collectionData, doc, deleteDoc, updateDoc} from '@angular/fire/firestore';
 import { Dish } from '../models/dish.model';
 import { Observable } from 'rxjs';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DishesService {
 
-  constructor(private firestore:Firestore) { }
+  constructor(private firestore:Firestore, private userService:UserService) { }
 
   addDish(dish:Dish){
+
+    dish.idRestaurant = this.userService.getUid()
+
     const dishRef = collection(this.firestore, 'dishes');
+    console.log(dish)
     return addDoc(dishRef, dish);
   }
 
