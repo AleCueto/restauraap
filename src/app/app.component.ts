@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { UserService } from './core/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,9 @@ export class AppComponent {
   ];
   public labels = [/*'Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'*/];
   constructor(
-    private translate:TranslateService
+    private translate:TranslateService,
+    private userService:UserService,
+    private router:Router
   ) {
     this.translate.setDefaultLang('en');
   }
@@ -28,5 +32,9 @@ export class AppComponent {
     this.translate.setDefaultLang(lng)
   }
 
+  logout(){
+    this.userService.logout();
+    this.router.navigate(['/folder/Dish']);
+  }
 
 }

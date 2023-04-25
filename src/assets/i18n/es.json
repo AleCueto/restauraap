@@ -55,6 +55,7 @@
     },
     "pages":{
         "home":"Home",
+        "register":"Registro",
         "title":"Menu",
         "dish":"Platos",
         "table":"Mesas",

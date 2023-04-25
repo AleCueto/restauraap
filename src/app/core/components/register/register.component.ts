@@ -4,7 +4,7 @@ import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-register',
+  selector: 'app-register-c',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
     this.userService.register(this.formRef.value)
     .then(response => {
       console.log(response)
-      this.router.navigate(['/login']);
+      this.router.navigate(['/home']);
     })
     .catch(error => console.log(error));
 

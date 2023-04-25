@@ -54,6 +54,7 @@
     },
     "pages":{
         "home":"Home",
+        "register":"Register",
         "title":"Menu",
         "dish":"Dishes",
         "table":"Tables",
