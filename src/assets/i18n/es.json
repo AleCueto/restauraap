@@ -54,6 +54,7 @@
         "seconds_to_harvest":"Segundos para recoger"
     },
     "pages":{
+        "home":"Home",
         "title":"Menu",
         "dish":"Platos",
         "table":"Mesas",

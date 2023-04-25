@@ -53,6 +53,7 @@
         "seconds_to_harvest":"Seconds to harvest"
     },
     "pages":{
+        "home":"Home",
         "title":"Menu",
         "dish":"Dishes",
         "table":"Tables",
