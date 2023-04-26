@@ -22,10 +22,13 @@ import { DishListItemComponent } from './components/dish-list-item/dish-list-ite
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MainComponent } from './components/main/main.component';
+import { TableComponent } from './components/table/table.component';
+import { TablesDetailedComponent } from './components/tables-detailed/tables-detailed.component';
+import { TableListItemComponent } from './components/table-list-item/table-list-item.component';
 
 
 @NgModule({
-  declarations: [TileComponent, FarmComponent, TileDetailComponent, StoreComponent, FarmeableSelectableComponent, FarmListComponent, AboutComponent, FarmDetailedComponent, FarmeableCreatorComponent, FarmeableEditableComponent, FarmeableDetailedComponent, DishesComponent, DishesDetailedComponent, DishListItemComponent, LoginComponent, RegisterComponent, MainComponent],
+  declarations: [TileComponent, FarmComponent, TileDetailComponent, StoreComponent, FarmeableSelectableComponent, FarmListComponent, AboutComponent, FarmDetailedComponent, FarmeableCreatorComponent, FarmeableEditableComponent, FarmeableDetailedComponent, DishesComponent, DishesDetailedComponent, DishListItemComponent, LoginComponent, RegisterComponent, MainComponent, TableComponent, TablesDetailedComponent, TableListItemComponent],
   imports: [
     CommonModule,
     IonicModule,
@@ -65,7 +68,10 @@ import { MainComponent } from './components/main/main.component';
     DishListItemComponent,
     LoginComponent,
     RegisterComponent,
-    MainComponent
+    MainComponent,
+    TableComponent,
+    TablesDetailedComponent,
+    TableListItemComponent
     ]
 })
 export class CoreModule { 

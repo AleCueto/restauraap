@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{"creator.data_farmeable" | translate}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onDismiss(null)">{{"generic.cancel" | translate}}</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">
+        {{"generic.name" | translate}}
+      </ion-label>
+      <ion-input type="number" placeholder="Introduce el nombre" formControlName="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        {{"store.amount" | translate}}
+        
+      </ion-label>
+      <ion-input type="string" placeholder="Introduce el precio" formControlName="info"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox formControlName="isReserved"></ion-checkbox>
+    </ion-item>
+  </form>
+</ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-button [disabled]="!form.valid" (click)="onSubmit()">{{(mode=="Edit"?"generic.modify":"generic.add") | translate}}</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

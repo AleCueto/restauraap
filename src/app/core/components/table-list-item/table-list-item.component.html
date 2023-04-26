@@ -1,0 +1,13 @@
+<span>{{this.tableInput?.number}}</span>
+
+<span>Reserved: <ion-checkbox [disabled]="true" [checked]="this.tableInput?.isReserved"></ion-checkbox></span>
+
+<span>{{this.tableInput?.info}}</span>
+
+
+<ion-button class="item-expanded" slot="end" fill="clear" *ngIf="this.tableInput" (click)="onEdittable(this.tableInput)">
+  {{ "generic.edit" | translate  | uppercase }}
+</ion-button>
+<ion-button class="item-expanded" slot="end" fill="clear" *ngIf="this.tableInput" (click)="onDeleteAlert(this.tableInput)">
+  {{ "generic.delete" | translate | uppercase }}
+</ion-button>
