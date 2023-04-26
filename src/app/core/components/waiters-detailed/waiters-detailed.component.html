@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{"creator.data_farmeable" | translate}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onDismiss(null)">{{"generic.cancel" | translate}}</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">
+        {{"generic.name" | translate}}
+      </ion-label>
+      <ion-input type="text" placeholder="Introduce el nombre" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        {{"generic.name" | translate}}
+      </ion-label>
+      <ion-input type="text" placeholder="Introduce el nombre" formControlName="surname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        {{"creator.image_beginning"| translate}}
+      </ion-label>
+      <ion-input type="file" (change)="uploadImage($event)" placeholder="Introduce la imagen" formControlName="picture"></ion-input>
+    </ion-item>
+    Disponible:
+    <ion-item>
+      <ion-checkbox formControlName="enabled"></ion-checkbox>
+    </ion-item>
+    Ocupado:
+    <ion-item>
+      <ion-checkbox formControlName="isBusy"></ion-checkbox>
+    </ion-item>
+
+  </form>
+  <input type="file" (change)="uploadImage($event)">
+</ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-button [disabled]="!form.valid" (click)="onSubmit()">{{(mode=="Edit"?"generic.modify":"generic.add") | translate}}</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- <div>
+    <img [src]="image" *ngFor="let image of getImages()" width="200">
+  </div> -->
+</ion-footer>
