@@ -33,11 +33,11 @@ export class TableComponent implements OnInit {
 
 
 
-  async presentTableForm(Table: Table | null) {
+  async presentTableForm(table: Table | null) {
     const modal = await this.modal.create({
       component: TablesDetailedComponent,
       componentProps: {
-        table: Table
+        table: table
       },
     });
     modal.present();
@@ -48,7 +48,7 @@ export class TableComponent implements OnInit {
             this.tableService.addTable(result.data.table);
             break;
           case 'Edit':
-            result.data.Table.id = Table?.id;
+            result.data.table.id = table?.id;
             this.tableService.editTable(result.data.table);
             break;
           default:
@@ -65,11 +65,10 @@ export class TableComponent implements OnInit {
     if(Table.idRestaurant == this.userService.getUid()){
       return true
     } else{
-      console.log("Table.idRestaurant: " + Table.idRestaurant  + "||" + "user UID: " + this.userService.getUid())
       return false
     }
   }
 
-
+  
 
 }

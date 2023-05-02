@@ -28,10 +28,11 @@ import { TableListItemComponent } from './components/table-list-item/table-list-
 import { WaitersComponent } from './components/waiters/waiters.component';
 import { WaiterListItemComponent } from './components/waiter-list-item/waiter-list-item.component';
 import { WaitersDetailedComponent } from './components/waiters-detailed/waiters-detailed.component';
+import { WaiterSelectableComponent } from './components/waiter-selectable/waiter-selectable.component';
 
 
 @NgModule({
-  declarations: [TileComponent, FarmComponent, TileDetailComponent, StoreComponent, FarmeableSelectableComponent, FarmListComponent, AboutComponent, FarmDetailedComponent, FarmeableCreatorComponent, FarmeableEditableComponent, FarmeableDetailedComponent, DishesComponent, DishesDetailedComponent, DishListItemComponent, LoginComponent, RegisterComponent, MainComponent, TableComponent, TablesDetailedComponent, TableListItemComponent, WaitersComponent, WaiterListItemComponent, WaitersDetailedComponent],
+  declarations: [TileComponent, FarmComponent, TileDetailComponent, StoreComponent, FarmeableSelectableComponent, FarmListComponent, AboutComponent, FarmDetailedComponent, FarmeableCreatorComponent, FarmeableEditableComponent, FarmeableDetailedComponent, DishesComponent, DishesDetailedComponent, DishListItemComponent, LoginComponent, RegisterComponent, MainComponent, TableComponent, TablesDetailedComponent, TableListItemComponent, WaitersComponent, WaiterListItemComponent, WaitersDetailedComponent, WaiterSelectableComponent],
   imports: [
     CommonModule,
     IonicModule,
@@ -77,7 +78,8 @@ import { WaitersDetailedComponent } from './components/waiters-detailed/waiters-
     TableListItemComponent,
     WaitersComponent,
     WaiterListItemComponent,
-    WaitersDetailedComponent
+    WaitersDetailedComponent,
+    WaiterSelectableComponent
     ]
 })
 export class CoreModule { 

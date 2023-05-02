@@ -3,12 +3,13 @@ import { UserService } from './user.service';
 import { Waiter } from '../models/waiter.model';
 import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, updateDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { Storage, ref } from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WaitersService {
-  constructor(private firestore:Firestore, private userService:UserService) { }
+  constructor(private firestore:Firestore, private userService:UserService, private storage:Storage) { }
 
   addWaiter(waiter:Waiter){
 

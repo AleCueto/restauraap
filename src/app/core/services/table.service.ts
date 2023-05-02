@@ -32,10 +32,12 @@ export class TableService {
 
   editTable(table:Table){
     console.log(table);
+    console.log(table.idWaiter)
     const tableData = {
       id: table.id,
       number: table.number,
       info: table.info,
+      idWaiter: table.idWaiter,
       isReserved: table.isReserved,
     }
 

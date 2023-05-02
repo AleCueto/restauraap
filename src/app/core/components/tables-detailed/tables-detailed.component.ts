@@ -4,6 +4,8 @@ import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { ImageService } from '../../services/image.service';
 import { Table } from '../../models/table.model';
+import { WaitersService } from '../../services/waiters.service';
+import { Waiter } from '../../models/waiter.model';
 
 @Component({
   selector: 'app-tables-detailed',
@@ -12,15 +14,19 @@ import { Table } from '../../models/table.model';
 })
 export class TablesDetailedComponent implements OnInit {
 
+  waiters: Waiter[] | undefined
+
   form:FormGroup;
   mode:"New" | "Edit" = "New";
 
   @Input('table') set table(table:Table){
+
     if(table){
       // this.form.controls['id'].setValue(table.id);
       this.form.controls['number'].setValue(table.number);
       this.form.controls['info'].setValue(table.info);
       this.form.controls['isReserved'].setValue(table.isReserved);
+      this.form.controls['idWaiter'].setValue(table.idWaiter);
       this.mode = "Edit";
     }
   }
@@ -28,6 +34,7 @@ export class TablesDetailedComponent implements OnInit {
   constructor(
     private fb:FormBuilder,
     private modal:ModalController,
+    private waitersService:WaitersService
   ) {
 
 
@@ -36,12 +43,16 @@ export class TablesDetailedComponent implements OnInit {
       number:['', [Validators.required]],
       info:['', [Validators.required]],
       isReserved:['', [Validators.required]],
+      idWaiter:['', [Validators.required]]
     });
 
   }
 
   ngOnInit() {
+    this.waitersService.getWaiters().subscribe(waiters =>{
+      this.waiters = waiters;
 
+    })
   }
 
   onSubmit(){

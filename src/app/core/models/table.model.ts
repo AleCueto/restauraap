@@ -4,5 +4,6 @@ export interface Table {
     number:number;
     info:string;
     isReserved:boolean;
+    idWaiter:string;
     idRestaurant:string;
 }
