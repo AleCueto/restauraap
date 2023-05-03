@@ -2,7 +2,7 @@
 
  ## Este es el repositorio de la versión web de Restaura App.
  
- ### Tecnologías:
+ ### Tecnologías (Bibliografía):
  -Angular
  -Ionic
  -Firebase (backend)
