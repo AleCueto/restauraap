@@ -1,5 +1,5 @@
 ﻿# Restaura app
- ![logo](https://github.com/AleCueto/imagenes/blob/master/favicon2.png)
+
  ## Este es el repositorio de la versión web de Restaura App.
  
  ### Tecnologías:
