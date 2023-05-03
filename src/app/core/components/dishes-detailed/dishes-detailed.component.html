@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{"creator.data_farmeable" | translate}}</ion-title>
+    <ion-title>{{"" | translate}}</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="onDismiss(null)">{{"generic.cancel" | translate}}</ion-button>
     </ion-buttons>
@@ -16,14 +16,14 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating">
-        {{"store.amount" | translate}}
+        {{"" | translate}}
         
       </ion-label>
       <ion-input type="number" placeholder="Introduce el precio" formControlName="price"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">
-        {{"creator.image_beginning"| translate}}
+        {{""| translate}}
       </ion-label>
       <ion-input type="file" (change)="uploadImage($event)" placeholder="Introduce la imagen" formControlName="image"></ion-input>
     </ion-item>
@@ -39,7 +39,4 @@
     </ion-row>
   </ion-grid>
 
-  <div>
-    <img [src]="image" *ngFor="let image of getImages()" width="200">
-  </div>
 </ion-footer>
