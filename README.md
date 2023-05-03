@@ -33,9 +33,10 @@
 
  
 
- ## Capturas de la app
- 
-Todavia no hay capturas
+ ## Capturas de la app 
+Historico de cambios
+![cambios](https://github.com/AleCueto/imagenes/blob/master/img.PNG)
+
 
 ## Video de Checkpoint:
 [![Alt text](https://img.youtube.com/vi/qk3atJxrR8Q/0.jpg)](https://youtu.be/qk3atJxrR8Q)
