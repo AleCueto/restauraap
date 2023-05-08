@@ -43,4 +43,5 @@ export class WaitersService {
     const waiterDocRef = doc(this.firestore, `waiters/${waiter.id}`);
     return updateDoc(waiterDocRef, waiterData);
   }
+
 }

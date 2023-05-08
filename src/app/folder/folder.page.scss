@@ -39,14 +39,25 @@ ion-menu-button {
 
 ion-content.folder{
   .container{
-    background-color: #f6b3e1;
+    // background-color: #f6b3e1;
     width:100%;
     height:100%;
   }
 }
 
-
-
 *{
   font-family: Fredoka;
+}
+
+ion-content {
+  --background: transparent;
+  background-image: url('/assets/images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+ion-toolbar{
+  background-color: #ffffff !important;
 }

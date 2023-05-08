@@ -1,10 +1,24 @@
-<ion-item>
-  <ion-button  (click)="onNewTable()" style="margin:10px;width:50px;height:50px;--border-radius:50%" slot="start" icon-only><ion-icon style="zoom:2" name="add-outline"></ion-icon></ion-button>
-</ion-item>
-<ion-list>
-  <div *ngFor="let i of tables">
-    <ion-item *ngIf="checkTableBelong(i)">
-      <app-table-list-item [tableInput]="i"></app-table-list-item>
-    </ion-item>
-  </div>
-</ion-list>
+<div>
+
+  <ion-item>
+    <ion-button  (click)="onNewTable()" style="margin:10px;width:50px;height:50px;--border-radius:50%" slot="start" icon-only><ion-icon style="zoom:2" name="add-outline"></ion-icon></ion-button>
+  </ion-item>
+  <!-- <ion-list>
+    <div >
+      <div *ngIf="checkTableBelong(i)">
+        <app-table-list-item [tableInput]="i"></app-table-list-item>
+      </div>
+    </div>
+  </ion-list> -->
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let i of tables" size="12" size-md="6" size-lg="4">
+        <div *ngIf="checkTableBelong(i)">
+          <app-table-list-item [tableInput]="i"></app-table-list-item>
+        </div>
+      </ion-col>
+  </ion-row>
+</ion-grid>
+
+</div>

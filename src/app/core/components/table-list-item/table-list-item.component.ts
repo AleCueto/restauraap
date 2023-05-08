@@ -5,6 +5,7 @@ import { AlertController, ModalController } from '@ionic/angular';
 import { ImageService } from '../../services/image.service';
 import { UserService } from '../../services/user.service';
 import { TablesDetailedComponent } from '../tables-detailed/tables-detailed.component';
+import { Waiter } from '../../models/waiter.model';
 
 @Component({
   selector: 'app-table-list-item',
@@ -15,6 +16,8 @@ export class TableListItemComponent implements OnInit {
 
   @Input() tableInput:Table | undefined;
 
+  waiter:Waiter|undefined;
+
   imageUrl:string = ""
 
   constructor(
@@ -22,12 +25,19 @@ export class TableListItemComponent implements OnInit {
     private alert:AlertController,
     private modal:ModalController,
     public imageService:ImageService,
-    private userService:UserService
-  ) { }
+    private userService:UserService,
+  ) {
+
+    // this.waiter = firestore
+
+   }
 
   ngOnInit() {
+
     if(this.tableInput){
       // console.log(this.imageService.getImageUrlByName(this.tableInput?.image))
+    
+    
     }
 
   }
