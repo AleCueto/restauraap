@@ -22,7 +22,8 @@ export class WaiterListItemComponent implements OnInit {
     private alert:AlertController,
     private modal:ModalController,
     public imageService:ImageService,
-    private userService:UserService
+    private userService:UserService,
+    
 
   ) { }
 
@@ -30,12 +31,15 @@ export class WaiterListItemComponent implements OnInit {
     if(this.waiterInput){
       // console.log(this.imageService.getImageUrlByName(this.dishInput?.image))
 
-      this.imageService.getImageUrlByName(this.waiterInput.picture).then(
-        (url) => {
-          console.log(url)
-          this.imageUrl = url
-        }).catch((error) => console.log(error))
     }
+
+    this.imageService.getImageUrlByName(this.waiterInput!.picture).subscribe(
+      url => {
+        console.log(url);
+        this.imageUrl = url;
+      },
+      error => console.log(error)
+    );
 
   }
 

@@ -25,6 +25,14 @@
     {{this.tableInput?.info}}
   </ion-card-content>
 
-  <ion-button *ngIf="this.tableInput" fill="clear" (click)="onEdittable(this.tableInput)">{{ "generic.edit" | translate  | uppercase }}</ion-button>
-  <ion-button *ngIf="this.tableInput" fill="clear" (click)="onDeleteAlert(this.tableInput)">{{ "generic.delete" | translate | uppercase }}</ion-button>
+  <ion-avatar>
+    <ion-img [src]="waiterImageUrl"></ion-img>
+  </ion-avatar>
+
+  <div style="padding:15px">
+    Camarero: {{this.waiter.name}}
+  </div>
+
+  <ion-button *ngIf="this.tableInput" fill="outline" size="large" (click)="onEdittable(this.tableInput)"><ion-icon name="create-outline"></ion-icon></ion-button>
+  <ion-button *ngIf="this.tableInput" fill="outline" size="large" color="danger" (click)="onDeleteAlert(this.tableInput)"><ion-icon name="trash-outline"></ion-icon></ion-button>
 </ion-card>

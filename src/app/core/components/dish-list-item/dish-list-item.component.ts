@@ -31,12 +31,23 @@ export class DishListItemComponent implements OnInit {
     if(this.dishInput){
       // console.log(this.imageService.getImageUrlByName(this.dishInput?.image))
 
-      this.imageService.getImageUrlByName(this.dishInput.image).then(
-        (url) => {
-          console.log(url)
-          this.imageUrl = url
-        }).catch((error) => console.log(error))
+      // this.imageService.getImageUrlByName(this.dishInput.image).then(
+      //   (url) => {
+      //     console.log(url)
+      //     this.imageUrl = url
+      //   }).catch((error) => console.log(error))
+
+        this.imageService.getImageUrlByName(this.dishInput.image).subscribe(
+          url => {
+            console.log(url);
+            this.imageUrl = url;
+          },
+          error => console.log(error)
+        );
+
     }
+
+
 
   }
 

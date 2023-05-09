@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Storage, ref, uploadBytes, listAll, getDownloadURL, list} from '@angular/fire/storage';
 import { error } from 'console';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, from } from 'rxjs';
 import { UtilsService } from './utils.service';
 
 @Injectable({
@@ -65,7 +65,7 @@ export class ImageService {
     // console.log(imagesRef.name)
     // console.log(imagesRef.name)
 
-    return getDownloadURL(imagesRef);
+    return from(getDownloadURL(imagesRef));
     // getDownloadURL(imagesRef)
     // .then(response => {
     //   console.log(response)

@@ -73,7 +73,7 @@ export class DishesComponent implements OnInit {
     if(dish.idRestaurant == this.userService.getUid()){
       return true
     } else{
-      console.log("dish.idRestaurant: " + dish.idRestaurant  + "||" + "user UID: " + this.userService.getUid())
+      // console.log("dish.idRestaurant: " + dish.idRestaurant  + "||" + "user UID: " + this.userService.getUid())
       return false
     }
   }

@@ -6,6 +6,7 @@ import { ImageService } from '../../services/image.service';
 import { UserService } from '../../services/user.service';
 import { TablesDetailedComponent } from '../tables-detailed/tables-detailed.component';
 import { Waiter } from '../../models/waiter.model';
+import { WaitersService } from '../../services/waiters.service';
 
 @Component({
   selector: 'app-table-list-item',
@@ -16,9 +17,9 @@ export class TableListItemComponent implements OnInit {
 
   @Input() tableInput:Table | undefined;
 
-  waiter:Waiter|undefined;
+  waiter:any|undefined;
 
-  imageUrl:string = ""
+  waiterImageUrl:string = ""
 
   constructor(
     private tablesService:TableService,
@@ -26,19 +27,45 @@ export class TableListItemComponent implements OnInit {
     private modal:ModalController,
     public imageService:ImageService,
     private userService:UserService,
+    private waiterService:WaitersService
   ) {
 
     // this.waiter = firestore
 
-   }
+  }
 
   ngOnInit() {
 
-    if(this.tableInput){
-      // console.log(this.imageService.getImageUrlByName(this.tableInput?.image))
+    // this.waiter = this.waiterService.getWaiterById(this.tableInput!.idWaiter)
     
+
+    this.waiterService.getWaiterById(this.tableInput!.idWaiter).subscribe(
+      waiter => {
+        this.waiter = waiter;
+        console.log(this.waiter)
+
+        this.imageService.getImageUrlByName(this.waiter.picture).subscribe(
+          url => {
+            console.log(url);
+            this.waiterImageUrl = url;
+          },
+          error => console.log(error)
+        );
+        
+      },
+      error => console.log(error)
+    );
+
+    // this.imageService.getImageUrlByName(this.waiter.image).subscribe(
+    //   url => {
+    //     console.log(url);
+    //     this.waiterImageUrl = url;
+    //   },
+    //   error => console.log(error)
+    // );
     
-    }
+      // console.log(this.waiter)
+
 
   }
 

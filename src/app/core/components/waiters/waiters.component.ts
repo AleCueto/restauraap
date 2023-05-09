@@ -63,7 +63,7 @@ export class WaitersComponent implements OnInit {
     if(waiter.idRestaurant == this.userService.getUid()){
       return true
     } else{
-      console.log("waiter.idRestaurant: " + waiter.idRestaurant  + "||" + "user UID: " + this.userService.getUid())
+      // console.log("waiter.idRestaurant: " + waiter.idRestaurant  + "||" + "user UID: " + this.userService.getUid())
       return false
     }
   }
