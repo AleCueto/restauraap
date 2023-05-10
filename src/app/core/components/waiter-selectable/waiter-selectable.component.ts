@@ -5,6 +5,8 @@ import { WaitersService } from '../../services/waiters.service';
 import { IonAccordionGroup } from '@ionic/angular';
 import { Table } from '../../models/table.model';
 import { map } from 'rxjs';
+import { ImageService } from '../../services/image.service';
+import { UserService } from '../../services/user.service';
 
 export const WAITER_PROFILE_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -26,9 +28,14 @@ export class WaiterSelectableComponent implements OnInit, ControlValueAccessor {
 
   propagateChange = (_: any) => { }
   itemSelected:Waiter | undefined;
+  itemSelectedUrl:string | undefined;
   form_edit:FormGroup | undefined;
 
-  constructor(private waitersService:WaitersService) { }
+  constructor(
+    private waitersService:WaitersService,
+    private imageService:ImageService,
+    private userService:UserService
+    ) { }
 
 
   writeValue(obj: any): void {
@@ -39,8 +46,24 @@ export class WaiterSelectableComponent implements OnInit, ControlValueAccessor {
         map((waitersArray: Waiter[]) => waitersArray.find(value => value.id === obj))
       ).subscribe((foundValue?: Waiter) => {
         console.log(foundValue?.id);
+        
         this.itemSelected = foundValue
+
+        if(this.itemSelected != undefined){
+
+          this.imageService.getImageUrlByName(this.itemSelected!.picture).subscribe(
+            url => {
+              console.log("url" + url);
+              this.itemSelectedUrl = url;
+            },
+            error => console.log(error)
+            );
+          }
+            
       });
+
+
+  
 
     }
   registerOnChange(fn: any): void {
@@ -54,14 +77,21 @@ export class WaiterSelectableComponent implements OnInit, ControlValueAccessor {
     this.itemSelected = waiterSelected
     accordion.value='';
     this.propagateChange(this.itemSelected.id);
+    this.imageService.getImageUrlByName(this.itemSelected!.picture).subscribe(
+      url => {
+        console.log("url" + url);
+        this.itemSelectedUrl = url;
+      },
+      error => console.log(error)
+    );
   }
 
   ngOnInit() {
 
     this.waitersService.getWaiters().subscribe(waiters =>{
-      this.waiters = waiters;
-
+      this.waiters = waiters.filter((w)=>w.idRestaurant == this.userService.getUid());
     })
+
 
   }
 

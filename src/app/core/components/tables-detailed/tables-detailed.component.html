@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{"" | translate}}</ion-title>
+    <ion-title>{{(mode=="Edit"?"table.edit":"table.create") | translate}}</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="onDismiss(null)">{{"generic.cancel" | translate}}</ion-button>
     </ion-buttons>

@@ -25,12 +25,22 @@
     {{this.tableInput?.info}}
   </ion-card-content>
 
-  <ion-avatar>
-    <ion-img [src]="waiterImageUrl"></ion-img>
-  </ion-avatar>
+  <div *ngIf="this.tableInput!.idWaiter != ''">
+    <ion-avatar style="position: relative;">
+      <ion-img [src]="waiterImageUrl"></ion-img>
+      <ion-button style="position: absolute; top: 0; right: 0; margin-top: -10px; margin-right: -10px; font-size: 10px; padding: 0; text-align: center;" shape="round" size="small" fill="outline" (click)="cleanWaiter()">
+        x
+      </ion-button>
+    </ion-avatar>
+    
+    <div style="padding:15px">
+      Camarero: {{this.waiter.name}}
+    </div>
+  </div>
+  
 
-  <div style="padding:15px">
-    Camarero: {{this.waiter.name}}
+  <div *ngIf="this.tableInput!.idWaiter == ''">
+    <h1>NO WAITER</h1>
   </div>
 
   <ion-button *ngIf="this.tableInput" fill="outline" size="large" (click)="onEdittable(this.tableInput)"><ion-icon name="create-outline"></ion-icon></ion-button>

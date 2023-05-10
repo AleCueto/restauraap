@@ -28,6 +28,10 @@
         "studies":"Estudio 2º DAM en el CPIFP (Málaga Tech Park)",
         "module":"Y esta actividad es para el módulo de Acceso a Datos y Hora de Libre configuración",
         "other_jobs":"Other jobs:"
+    },
+    "table":{
+        "edit":"Edit table",
+        "create":"Create table"
     }
 
 

@@ -17,7 +17,7 @@ export class TableListItemComponent implements OnInit {
 
   @Input() tableInput:Table | undefined;
 
-  waiter:any|undefined;
+  waiter:any = {};
 
   waiterImageUrl:string = ""
 
@@ -38,25 +38,27 @@ export class TableListItemComponent implements OnInit {
 
     // this.waiter = this.waiterService.getWaiterById(this.tableInput!.idWaiter)
     
+    if(this.tableInput?.idWaiter != ""){
 
-    this.waiterService.getWaiterById(this.tableInput!.idWaiter).subscribe(
-      waiter => {
-        this.waiter = waiter;
-        console.log(this.waiter)
-
-        this.imageService.getImageUrlByName(this.waiter.picture).subscribe(
-          url => {
-            console.log(url);
-            this.waiterImageUrl = url;
+      this.waiterService.getWaiterById(this.tableInput!.idWaiter).subscribe(
+        waiter => {
+          this.waiter = waiter;
+          console.log(this.waiter)
+          
+          this.imageService.getImageUrlByName(this.waiter.picture).subscribe(
+            url => {
+              console.log(url);
+              this.waiterImageUrl = url;
+            },
+            error => console.log(error)
+            );
+            
           },
           error => console.log(error)
-        );
-        
-      },
-      error => console.log(error)
-    );
-
-    // this.imageService.getImageUrlByName(this.waiter.image).subscribe(
+          );
+          
+        }
+          // this.imageService.getImageUrlByName(this.waiter.image).subscribe(
     //   url => {
     //     console.log(url);
     //     this.waiterImageUrl = url;
@@ -128,6 +130,12 @@ export class TableListItemComponent implements OnInit {
     });
   }
 
+  cleanWaiter(){
+    const table = this.tableInput
+    table!.idWaiter = ""
+    this.tablesService.editTable(table!)
+    this.waiter = null
+  }
 
   onEdittable(table:Table){
     this.presenttableForm(table);

@@ -29,6 +29,10 @@
         "module":"This is an activity for the module Data Access and free configuration hour",
         "other_jobs":"Otros trabajos:"
 
+    },
+    "table":{
+        "edit":"Editar mesa",
+        "create":"Crear mesa"
     }
 
 
