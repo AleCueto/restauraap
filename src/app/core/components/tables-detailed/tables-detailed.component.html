@@ -11,23 +11,22 @@
     <app-waiter-selectable formControlName="idWaiter"></app-waiter-selectable>
     <ion-item>
       <ion-label position="floating">
-        {{"generic.name" | translate}}
+        {{"generic.number" | translate}}
       </ion-label>
-      <ion-input type="number" placeholder="Introduce el nombre" formControlName="number"></ion-input>
+      <ion-input type="number" placeholder="Introduce el numero de mesa" formControlName="number"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">
-        {{"" | translate}}
+        {{"generic.info" | translate}}
         
       </ion-label>
-      <ion-input type="string" placeholder="Introduce el precio" formControlName="info"></ion-input>
+      <ion-input type="string" placeholder="Introduce información extra" formControlName="info"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-checkbox formControlName="isReserved"></ion-checkbox>
-    </ion-item>
-
-
-    <ion-item>
+      <ion-label position="floating">
+        {{"table.needsAttention" | translate}}
+      </ion-label>
+      <ion-checkbox formControlName="needsAttention"></ion-checkbox>
     </ion-item>
 
   </form>

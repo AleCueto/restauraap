@@ -11,7 +11,9 @@
         "cancel":"Cancelar",
         "warning":"¡No puedes!",
         "modify":"Modificar",
-        "add":"Añadir"
+        "add":"Añadir",
+        "number":"Numero",
+        "info":"Info"
     },
     "pages":{
         "home":"Home",
@@ -32,7 +34,8 @@
     },
     "table":{
         "edit":"Editar mesa",
-        "create":"Crear mesa"
+        "create":"Crear mesa",
+        "needsAttention":"Necesita atención"
     }
 
 

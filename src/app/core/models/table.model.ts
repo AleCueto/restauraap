@@ -3,7 +3,7 @@ export interface Table {
     id:string;
     number:number;
     info:string;
-    isReserved:boolean;
+    needsAttention:boolean;
     idWaiter:string;
     idRestaurant:string;
 }

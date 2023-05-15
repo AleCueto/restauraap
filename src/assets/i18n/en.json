@@ -11,7 +11,9 @@
         "cancel":"Cancel",
         "warning":"Your cant!",
         "modify":"Modify",
-        "add":"Add"
+        "add":"Add",
+        "number":"Number",
+        "info":"Info"
     },
     "pages":{
         "home":"Home",
@@ -31,7 +33,8 @@
     },
     "table":{
         "edit":"Edit table",
-        "create":"Create table"
+        "create":"Create table",
+        "needsAttention":"Needs attention"
     }
 
 

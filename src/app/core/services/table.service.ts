@@ -38,7 +38,7 @@ export class TableService {
       number: table.number,
       info: table.info,
       idWaiter: table.idWaiter,
-      isReserved: table.isReserved,
+      needsAttention: table.needsAttention,
     }
 
     const TableDocRef = doc(this.firestore, `tables/${table.id}`);

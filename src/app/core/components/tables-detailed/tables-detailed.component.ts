@@ -25,7 +25,7 @@ export class TablesDetailedComponent implements OnInit {
       // this.form.controls['id'].setValue(table.id);
       this.form.controls['number'].setValue(table.number);
       this.form.controls['info'].setValue(table.info);
-      this.form.controls['isReserved'].setValue(table.isReserved);
+      this.form.controls['needsAttention'].setValue(table.needsAttention);
       this.form.controls['idWaiter'].setValue(table.idWaiter);
       this.mode = "Edit";
     }
@@ -42,7 +42,7 @@ export class TablesDetailedComponent implements OnInit {
     this.form = this.fb.group({
       number:['', [Validators.required]],
       info:['', [Validators.required]],
-      isReserved:['', [Validators.required]],
+      needsAttention:['', [Validators.required]],
       idWaiter:['', [Validators.required]]
     });
 
