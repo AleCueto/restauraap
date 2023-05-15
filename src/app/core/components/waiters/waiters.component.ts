@@ -26,7 +26,10 @@ export class WaitersComponent implements OnInit {
   ngOnInit() {
     this.waitersService.getWaiters().subscribe(waiters =>{
       this.waiters = waiters;
+      this.waiters = this.waiters?.filter((waiter) => this.checkWaiterBelong(waiter))
     })
+
+
   }
 
 
@@ -61,6 +64,7 @@ export class WaitersComponent implements OnInit {
 
   checkWaiterBelong(waiter:Waiter){
     if(waiter.idRestaurant == this.userService.getUid()){
+      // console.log(waiter);
       return true
     } else{
       // console.log("waiter.idRestaurant: " + waiter.idRestaurant  + "||" + "user UID: " + this.userService.getUid())

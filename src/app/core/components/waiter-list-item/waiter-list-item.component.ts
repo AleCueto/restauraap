@@ -30,7 +30,7 @@ export class WaiterListItemComponent implements OnInit {
   ngOnInit() {
     if(this.waiterInput){
       // console.log(this.imageService.getImageUrlByName(this.dishInput?.image))
-
+      console.log(this.waiterInput)
     }
 
     this.imageService.getImageUrlByName(this.waiterInput!.picture).subscribe(

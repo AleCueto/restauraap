@@ -41,9 +41,9 @@ export class TablesDetailedComponent implements OnInit {
 
     this.form = this.fb.group({
       number:['', [Validators.required]],
-      info:['', [Validators.required]],
-      needsAttention:['', [Validators.required]],
-      idWaiter:['', [Validators.required]]
+      info:['', ],
+      needsAttention:[true, ],
+      idWaiter:['', ]
     });
 
   }
