@@ -39,6 +39,7 @@ export class WaitersService {
       name: waiter.name,
       surname: waiter.surname,
       picture: waiter.picture,
+      enabled: waiter.enabled,
       isBusy: waiter.isBusy
     }
 

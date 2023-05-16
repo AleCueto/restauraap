@@ -42,8 +42,8 @@ export class WaitersDetailedComponent implements OnInit {
       name:['', [Validators.required]],
       surname:['', [Validators.required]],
       picture:['', [Validators.required]],
-      isBusy:['', [Validators.required]],
-      enabled:['', [Validators.required]],
+      isBusy:[false,],
+      enabled:[true,],
     });
 
   }

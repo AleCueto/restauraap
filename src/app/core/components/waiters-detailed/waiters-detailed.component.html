@@ -16,27 +16,30 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating">
-        {{"generic.name" | translate}}
+        {{"generic.surname" | translate}}
       </ion-label>
-      <ion-input type="text" placeholder="Introduce el nombre" formControlName="surname"></ion-input>
+      <ion-input type="text" placeholder="Introduce el apellido" formControlName="surname"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">
-        {{""| translate}}
+        {{"generic.image"| translate}}
       </ion-label>
-      <ion-input type="file" (change)="uploadImage($event)" placeholder="Introduce la imagen" formControlName="picture"></ion-input>
+      <ion-input type="file" (change)="uploadImage($event)" formControlName="picture"></ion-input>
     </ion-item>
-    Disponible:
     <ion-item>
+      <ion-label position="floating">
+        {{"generic.enabled"| translate}}
+      </ion-label>
       <ion-checkbox formControlName="enabled"></ion-checkbox>
     </ion-item>
-    Ocupado:
     <ion-item>
+      <ion-label position="floating">
+        {{"waiter.bussy"| translate}}
+      </ion-label>
       <ion-checkbox formControlName="isBusy"></ion-checkbox>
     </ion-item>
 
   </form>
-  <input type="file" (change)="uploadImage($event)">
 </ion-content>
 <ion-footer>
   <ion-grid>

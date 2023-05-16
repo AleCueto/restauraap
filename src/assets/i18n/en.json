@@ -5,6 +5,7 @@
         "money":"Money",
         "tiles":"Tiles",
         "name":"Name",
+        "surname":"Surname",
         "edit":"Edit",
         "delete":"Delete",
         "error":"Error",
@@ -13,7 +14,9 @@
         "modify":"Modify",
         "add":"Add",
         "number":"Number",
-        "info":"Info"
+        "info":"Info",
+        "image":"Image",
+        "enabled":"Enabled"
     },
     "pages":{
         "home":"Home",
@@ -35,6 +38,9 @@
         "edit":"Edit table",
         "create":"Create table",
         "needsAttention":"Needs attention"
+    },
+    "waiter":{
+        "bussy":"Bussy"
     }
 
 

@@ -107,4 +107,10 @@ export class WaiterListItemComponent implements OnInit {
     this.presentWaiterForm(waiter);
   }
 
+  changeBussy(){
+    const waiter = this.waiterInput
+    waiter!.isBusy = !waiter?.isBusy
+    this.waiterService.editWaiter(waiter!)
+  }
+
 }
