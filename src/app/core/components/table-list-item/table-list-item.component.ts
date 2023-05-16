@@ -17,6 +17,8 @@ export class TableListItemComponent implements OnInit {
 
   @Input() tableInput:Table | undefined;
 
+  waiters!:Waiter[]
+
   waiter:any = {};
 
   waiterImageUrl:string = ""
@@ -35,6 +37,11 @@ export class TableListItemComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    //Get all the waiters to automatic assignment
+    this.waiterService.getWaiters().subscribe(waiters =>{
+      this.waiters = waiters.filter((w)=>w.idRestaurant == this.userService.getUid());
+    })
 
     // this.waiter = this.waiterService.getWaiterById(this.tableInput!.idWaiter)
     
@@ -134,10 +141,33 @@ export class TableListItemComponent implements OnInit {
     const table = this.tableInput
     table!.idWaiter = ""
     this.tablesService.editTable(table!)
+    //Comprobar las mesas del camarero.
     this.waiter = null
   }
 
   onEdittable(table:Table){
     this.presenttableForm(table);
   }
+
+  autoAssingWaiters(){
+    const waitersRandom = this.waiters;
+
+    waitersRandom.sort(() => Math.random() - 0.5)
+
+    const waiterNotBussy = waitersRandom.find((w)=> w.isBusy == false)
+    if(waiterNotBussy){
+      //Set waiter bussy
+      waiterNotBussy.isBusy = true
+      this.waiterService.editWaiter(waiterNotBussy)
+      console.log(waiterNotBussy)
+
+      //Set tables's waiter as waiternotbussy
+      const table = this.tableInput
+      table!.idWaiter = waiterNotBussy.id
+      this.tablesService.editTable(table!)
+    } else{
+      console.log("No hay camareros libres")
+    }
+  }
+
 }

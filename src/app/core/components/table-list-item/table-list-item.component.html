@@ -23,6 +23,13 @@
 
   <ion-card-content>
     {{this.tableInput?.info}}
+
+    <ion-fab vertical="top" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="autoAssingWaiters()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
   </ion-card-content>
 
   <div *ngIf="this.tableInput!.idWaiter != ''">
