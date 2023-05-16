@@ -17,6 +17,8 @@ export class WaitersService {
 
     waiter.idRestaurant = this.userService.getUid()
 
+    waiter.tablesAttended = 0
+
     const waiterRef = collection(this.firestore, 'waiters');
     console.log(waiter)
     return addDoc(waiterRef, waiter);
@@ -40,7 +42,8 @@ export class WaitersService {
       surname: waiter.surname,
       picture: waiter.picture,
       enabled: waiter.enabled,
-      isBusy: waiter.isBusy
+      isBusy: waiter.isBusy,
+      tablesAttended: waiter.tablesAttended
     }
 
     const waiterDocRef = doc(this.firestore, `waiters/${waiter.id}`);

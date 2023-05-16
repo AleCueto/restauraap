@@ -16,6 +16,10 @@ export class TablesDetailedComponent implements OnInit {
 
   waiters: Waiter[] | undefined
 
+  actualWaiter:any
+  newWaiter:any
+
+
   form:FormGroup;
   mode:"New" | "Edit" = "New";
 
@@ -28,7 +32,20 @@ export class TablesDetailedComponent implements OnInit {
       this.form.controls['needsAttention'].setValue(table.needsAttention);
       this.form.controls['idWaiter'].setValue(table.idWaiter);
       this.mode = "Edit";
-    }
+
+      //Save the waiter we had to substract a table attended in case in submit is another
+      if(table.idWaiter!= ""){
+
+        this.waitersService.getWaiterById(table!.idWaiter).subscribe(
+          waiter => {
+            this.actualWaiter = waiter;
+            this.actualWaiter.id = table.idWaiter
+            console.log("ACTUAL WAITER: " + this.actualWaiter.id)
+          },
+          error => console.log(error)
+          );
+        }
+      }
   }
 
   constructor(
@@ -36,8 +53,6 @@ export class TablesDetailedComponent implements OnInit {
     private modal:ModalController,
     private waitersService:WaitersService
   ) {
-
-
 
     this.form = this.fb.group({
       number:['', [Validators.required]],
@@ -51,11 +66,37 @@ export class TablesDetailedComponent implements OnInit {
   ngOnInit() {
     this.waitersService.getWaiters().subscribe(waiters =>{
       this.waiters = waiters;
-
     })
   }
 
   onSubmit(){
+
+    if(this.actualWaiter){
+      if(this.form.value.idWaiter != this.actualWaiter){
+        this.actualWaiter.tablesAttended--;
+        //RESTAR
+        if(this.actualWaiter.tablesAttended <= 0){
+          this.actualWaiter.isBusy = false;
+        }
+    
+        this.waitersService.editWaiter(this.actualWaiter);
+    
+      }
+    }
+    
+    this.waitersService.getWaiterById(this.form.value.idWaiter).subscribe(
+      waiter => {
+        console.log("ewrfewregrweewg: " + waiter)
+        this.newWaiter = waiter;
+        this.newWaiter.id = this.form.value.idWaiter
+        console.log("NEW WAITER "  +  this.newWaiter.id)
+        this.newWaiter.tablesAttended ++;
+        this.newWaiter.isBusy = true
+        this.waitersService.editWaiter(this.newWaiter)
+        },
+        error => console.log(error)
+    );
+
     this.modal.dismiss({table: this.form.value, mode:this.mode}, 'ok');
   }
 

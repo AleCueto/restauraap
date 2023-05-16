@@ -138,11 +138,23 @@ export class TableListItemComponent implements OnInit {
   }
 
   cleanWaiter(){
+    //Reduce tables
+    this.waiter.tablesAttended--;
+    this.waiter.id = this.tableInput?.idWaiter
+
+    console.log("rew:" + this.waiter.id)
+
+    if(this.waiter.tablesAttended <= 0){
+      this.waiter.isBusy = false;
+    }
+
+    this.waiterService.editWaiter(this.waiter)
+
+    this.waiter = null
+
     const table = this.tableInput
     table!.idWaiter = ""
     this.tablesService.editTable(table!)
-    //Comprobar las mesas del camarero.
-    this.waiter = null
   }
 
   onEdittable(table:Table){
@@ -157,6 +169,7 @@ export class TableListItemComponent implements OnInit {
     const waiterNotBussy = waitersRandom.find((w)=> w.isBusy == false)
     if(waiterNotBussy){
       //Set waiter bussy
+      waiterNotBussy.tablesAttended++;
       waiterNotBussy.isBusy = true
       this.waiterService.editWaiter(waiterNotBussy)
       console.log(waiterNotBussy)
@@ -166,7 +179,13 @@ export class TableListItemComponent implements OnInit {
       table!.idWaiter = waiterNotBussy.id
       this.tablesService.editTable(table!)
     } else{
-      console.log("No hay camareros libres")
+      // console.log("No hay camareros libres")
+      // const waiterLessWork = waitersRandom.reduce((menor, waiter) => {
+      //   if (!menor || waiter.tablesAttended < menor.tablesAttended) {
+      //     return waiter;
+      //   }
+      //   return menor;
+      // }, null);
     }
   }
 
