@@ -19,10 +19,12 @@ import { WaitersComponent } from './components/waiters/waiters.component';
 import { WaiterListItemComponent } from './components/waiter-list-item/waiter-list-item.component';
 import { WaitersDetailedComponent } from './components/waiters-detailed/waiters-detailed.component';
 import { WaiterSelectableComponent } from './components/waiter-selectable/waiter-selectable.component';
+import { CommandComponent } from './components/command/command.component';
+import { CommandListItemComponent } from './components/command-list-item/command-list-item.component';
 
 
 @NgModule({
-  declarations: [DishesComponent, DishesDetailedComponent, DishListItemComponent, LoginComponent, RegisterComponent, MainComponent, TableComponent, TablesDetailedComponent, TableListItemComponent, WaitersComponent, WaiterListItemComponent, WaitersDetailedComponent, WaiterSelectableComponent, AboutComponent],
+  declarations: [DishesComponent, DishesDetailedComponent, DishListItemComponent, LoginComponent, RegisterComponent, MainComponent, TableComponent, TablesDetailedComponent, TableListItemComponent, WaitersComponent, WaiterListItemComponent, WaitersDetailedComponent, WaiterSelectableComponent, AboutComponent, CommandComponent, CommandListItemComponent],
   imports: [
     CommonModule,
     IonicModule,
@@ -50,6 +52,7 @@ import { WaiterSelectableComponent } from './components/waiter-selectable/waiter
     DishesComponent,
     DishesDetailedComponent,
     DishListItemComponent,
+    CommandComponent,
     LoginComponent,
     RegisterComponent,
     MainComponent,
@@ -59,7 +62,8 @@ import { WaiterSelectableComponent } from './components/waiter-selectable/waiter
     WaitersComponent,
     WaiterListItemComponent,
     WaitersDetailedComponent,
-    WaiterSelectableComponent
+    WaiterSelectableComponent,
+    CommandListItemComponent
     ]
 })
 export class CoreModule { 
