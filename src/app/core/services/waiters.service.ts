@@ -43,7 +43,7 @@ export class WaitersService {
       picture: waiter.picture,
       enabled: waiter.enabled,
       isBusy: waiter.isBusy,
-      tablesAttended: waiter.tablesAttended
+      // tablesAttended: waiter.tablesAttended
     }
 
     const waiterDocRef = doc(this.firestore, `waiters/${waiter.id}`);

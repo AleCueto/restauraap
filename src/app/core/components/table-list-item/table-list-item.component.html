@@ -17,8 +17,27 @@
       <ion-card-title>{{this.tableInput?.number}}</ion-card-title>
         <img src="/assets/images/mesa.png" alt="table image">
     </span>
-    <ion-card-subtitle *ngIf="this.tableInput!.needsAttention">Needs Attention</ion-card-subtitle>
-    <ion-card-subtitle *ngIf="this.tableInput!.needsAttention == false ">Attended</ion-card-subtitle>
+    <!-- <ion-card-subtitle *ngIf="this.tableInput!.idWaiter == ''">Needs Attention</ion-card-subtitle>
+    <ion-card-subtitle *ngIf="this.tableInput!.idWaiter != ''">Attended</ion-card-subtitle> -->
+  
+    <div *ngIf="this.tableInput!.idWaiter != ''">
+      <ion-avatar style="position: relative;">
+        <ion-fab-button style="z-index: 10; position: absolute; top: 0; right: 0; margin-top: -20px; margin-right: -20px; font-size: 10px; padding: 0; text-align: center;" size="small" (click)="cleanWaiter()">
+          x
+        </ion-fab-button>
+        <ion-img [src]="waiterImageUrl"></ion-img>
+      </ion-avatar>
+      
+      <div style="padding:15px">
+        Camarero: {{this.waiter.name}}
+      </div>
+    </div>
+    
+  
+    <div *ngIf="this.tableInput!.idWaiter == ''">
+      <h1>NO WAITER</h1>
+    </div>
+  
   </ion-card-header>
 
   <ion-card-content>
@@ -32,23 +51,7 @@
 
   </ion-card-content>
 
-  <div *ngIf="this.tableInput!.idWaiter != ''">
-    <ion-avatar style="position: relative;">
-      <ion-img [src]="waiterImageUrl"></ion-img>
-      <ion-button style="position: absolute; top: 0; right: 0; margin-top: -10px; margin-right: -10px; font-size: 10px; padding: 0; text-align: center;" shape="round" size="small" fill="outline" (click)="cleanWaiter()">
-        x
-      </ion-button>
-    </ion-avatar>
-    
-    <div style="padding:15px">
-      Camarero: {{this.waiter.name}}
-    </div>
-  </div>
-  
 
-  <div *ngIf="this.tableInput!.idWaiter == ''">
-    <h1>NO WAITER</h1>
-  </div>
 
   <ion-button *ngIf="this.tableInput" fill="outline" size="large" (click)="onEdittable(this.tableInput)"><ion-icon name="create-outline"></ion-icon></ion-button>
   <ion-button *ngIf="this.tableInput" fill="outline" size="large" color="danger" (click)="onDeleteAlert(this.tableInput)"><ion-icon name="trash-outline"></ion-icon></ion-button>
