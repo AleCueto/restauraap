@@ -37,6 +37,11 @@ export class RegisterComponent implements OnInit {
     .catch(error => console.log(error));
 
   }
+  
+  goLogin(){
+    this.router.navigate(['/home']);
+  }
+
 
 }
 
