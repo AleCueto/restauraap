@@ -30,6 +30,8 @@ export class DishesComponent implements OnInit {
   ngOnInit() {
     this.dishesService.getDishes().subscribe(dishes =>{
       this.dishes = dishes;
+      this.dishes = this.dishes?.filter((dish) => this.checkDishBelong(dish))
+
     })
 
   }
