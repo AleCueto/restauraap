@@ -50,6 +50,12 @@
         </ion-card-header>
         <ion-card-content>
             IsBusy: <ion-checkbox [disabled]="true" [checked]="this.waiterInput?.isBusy"></ion-checkbox>
+
+            <div>
+              <ion-button *ngIf="this.waiterInput" fill="outline" size="large" (click)="onEditWaiter(this.waiterInput)"><ion-icon name="create-outline"></ion-icon></ion-button>
+              <ion-button *ngIf="this.waiterInput" fill="outline" size="large" color="danger" (click)="onDeleteAlert(this.waiterInput)"><ion-icon name="trash-outline"></ion-icon></ion-button>
+            </div>
+              
         </ion-card-content>
       </ion-col>
     </ion-row>
