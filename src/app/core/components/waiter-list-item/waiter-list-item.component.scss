@@ -1,6 +1,5 @@
-ion-card.is-disabled {
-    opacity: 0.5;
-    // cursor: not-allowed;
+.card.inactive {
+  opacity: 0.5; /* Estilo para tarjeta desactivada */
 }
 
 ion-card{

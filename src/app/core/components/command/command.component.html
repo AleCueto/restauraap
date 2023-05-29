@@ -1,0 +1,10 @@
+<button (click)="downloadJson()">rw</button>
+<ion-grid>
+  <ion-row>
+    <ion-col *ngFor="let i of commands" size="12">
+      <div *ngIf="checkCommandBelong(i)">
+        <app-command-list-item [commandInput]="i"></app-command-list-item>
+      </div>
+    </ion-col>
+</ion-row>
+</ion-grid>

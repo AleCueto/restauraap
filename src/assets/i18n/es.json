@@ -5,6 +5,7 @@
         "money":"Dinero",
         "tiles":"Casillas",
         "name":"Nombre",
+        "surname":"Apellido",
         "edit":"Editar",
         "delete":"Borrar",
         "error":"Error",
@@ -13,7 +14,9 @@
         "modify":"Modificar",
         "add":"Añadir",
         "number":"Numero",
-        "info":"Info"
+        "info":"Info",
+        "image":"Imagen",
+        "enabled":"Habilitado"
     },
     "pages":{
         "home":"Home",
@@ -36,6 +39,9 @@
         "edit":"Editar mesa",
         "create":"Crear mesa",
         "needsAttention":"Necesita atención"
+    },
+    "waiter":{
+        "bussy":"Ocupado"
     }
 
 

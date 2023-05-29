@@ -32,7 +32,7 @@
 
   </ion-card-content>
 </ion-card> -->
-<ion-card>
+<ion-card class="card" [ngClass]="{'inactive': !this.waiterInput?.enabled}">
   <ion-grid>
     <ion-row>
       <ion-col size="3">
@@ -49,14 +49,12 @@
           </ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>
-            IsBusy: <ion-checkbox [disabled]="true" [checked]="this.waiterInput?.isBusy"></ion-checkbox>
-
+            IsBusy: <ion-checkbox [disabled]="false" [checked]="this.waiterInput?.isBusy" (ionChange)="changeBussy()"></ion-checkbox>
             <div>
               <ion-button *ngIf="this.waiterInput" fill="outline" size="large" (click)="onEditWaiter(this.waiterInput)"><ion-icon name="create-outline"></ion-icon></ion-button>
               <ion-button *ngIf="this.waiterInput" fill="outline" size="large" color="danger" (click)="onDeleteAlert(this.waiterInput)"><ion-icon name="trash-outline"></ion-icon></ion-button>
             </div>
-              
-        </ion-card-content>
+          </ion-card-content>
       </ion-col>
     </ion-row>
   </ion-grid>

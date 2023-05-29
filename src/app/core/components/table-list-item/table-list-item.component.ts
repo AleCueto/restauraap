@@ -15,19 +15,21 @@ import { WaitersService } from '../../services/waiters.service';
 })
 export class TableListItemComponent implements OnInit {
 
-  @Input() tableInput:Table | undefined;
+  @Input() tableInput: Table | undefined;
 
-  waiter:any = {};
+  waiters!: Waiter[]
 
-  waiterImageUrl:string = ""
+  waiter: any = {};
+
+  waiterImageUrl: string = ""
 
   constructor(
-    private tablesService:TableService,
-    private alert:AlertController,
-    private modal:ModalController,
-    public imageService:ImageService,
-    private userService:UserService,
-    private waiterService:WaitersService
+    private tablesService: TableService,
+    private alert: AlertController,
+    private modal: ModalController,
+    public imageService: ImageService,
+    private userService: UserService,
+    private waiterService: WaitersService
   ) {
 
     // this.waiter = firestore
@@ -36,49 +38,54 @@ export class TableListItemComponent implements OnInit {
 
   ngOnInit() {
 
+    //Get all the waiters to automatic assignment
+    this.waiterService.getWaiters().subscribe(waiters => {
+      this.waiters = waiters.filter((w) => w.idRestaurant == this.userService.getUid());
+    })
+
     // this.waiter = this.waiterService.getWaiterById(this.tableInput!.idWaiter)
-    
-    if(this.tableInput?.idWaiter != ""){
+
+    if (this.tableInput?.idWaiter != "") {
 
       this.waiterService.getWaiterById(this.tableInput!.idWaiter).subscribe(
         waiter => {
           this.waiter = waiter;
           console.log(this.waiter)
-          
+
           this.imageService.getImageUrlByName(this.waiter.picture).subscribe(
             url => {
               console.log(url);
               this.waiterImageUrl = url;
             },
             error => console.log(error)
-            );
-            
-          },
-          error => console.log(error)
           );
-          
-        }
-          // this.imageService.getImageUrlByName(this.waiter.image).subscribe(
+
+        },
+        error => console.log(error)
+      );
+
+    }
+    // this.imageService.getImageUrlByName(this.waiter.image).subscribe(
     //   url => {
     //     console.log(url);
     //     this.waiterImageUrl = url;
     //   },
     //   error => console.log(error)
     // );
-    
-      // console.log(this.waiter)
+
+    // console.log(this.waiter)
 
 
   }
 
 
-  async deleteTable(table:Table){
+  async deleteTable(table: Table) {
     console.log("rfwe");
     await this.tablesService.deleteTable(table);
   }
 
-  
-  async onDeleteAlert(table:Table) {
+
+  async onDeleteAlert(table: Table) {
     const alert = await this.alert.create({
       header: 'Atención',
       message: '¿Está seguro de que desear borrar este plato?',
@@ -130,14 +137,107 @@ export class TableListItemComponent implements OnInit {
     });
   }
 
-  cleanWaiter(){
+  cleanWaiter() {
+    //Reduce tables
+    this.waiter.tablesAttended--;
+    this.waiter.id = this.tableInput?.idWaiter
+
+    console.log("rew:" + this.waiter.id)
+
+    if (this.waiter.tablesAttended <= 0) {
+      this.waiter.isBusy = false;
+    }
+
+    this.waiterService.editWaiter(this.waiter)
+
+    this.waiter = null
+
     const table = this.tableInput
     table!.idWaiter = ""
     this.tablesService.editTable(table!)
-    this.waiter = null
   }
 
-  onEdittable(table:Table){
+  onEdittable(table: Table) {
     this.presenttableForm(table);
   }
+
+  autoAssingWaiters() {
+    let waitersRandom = this.waiters;
+
+    waitersRandom.sort(() => Math.random() - 0.5)
+
+    waitersRandom =  waitersRandom.filter((item) => item.enabled == true)
+
+    console.log("REWERFWREFW: " + waitersRandom)
+
+    const waiterNotBussy = waitersRandom.find((w) => w.isBusy == false)
+    if (waiterNotBussy) {
+      //Set waiter bussy
+      waiterNotBussy.tablesAttended++;
+      waiterNotBussy.isBusy = true
+      this.waiterService.editWaiter(waiterNotBussy)
+      console.log(waiterNotBussy)
+
+      //Set tables's waiter as waiternotbussy
+      const table = this.tableInput
+      table!.idWaiter = waiterNotBussy.id
+      this.tablesService.editTable(table!)
+    }
+
+    let waiterLessBussy:any
+
+    if(waitersRandom.length > 0){
+      waiterLessBussy = waitersRandom.reduce((lessBussy, waiter) => {
+        if (waiter.tablesAttended < lessBussy.tablesAttended) {
+          return waiter;
+        } else {
+          return lessBussy;
+        }
+      });
+    }
+      
+    if (!waiterNotBussy && waiterLessBussy) {
+
+      //Set waiter bussy
+      waiterLessBussy.tablesAttended++;
+      waiterLessBussy.isBusy = true
+      this.waiterService.editWaiter(waiterLessBussy)
+      console.log(waiterLessBussy)
+
+      //Set tables's waiter as waiternotbussy
+      const table = this.tableInput
+      table!.idWaiter = waiterLessBussy.id
+      this.tablesService.editTable(table!)
+
+    }
+
+    if (!waiterNotBussy && !waiterLessBussy) {
+      console.log("NO HAY CAMAREROS DISPONIBLES")
+      this.onNoWaitersAlert()
+    }
+
+  }
+
+  
+  async onNoWaitersAlert() {
+    const alert = await this.alert.create({
+      header: 'Atención',
+      message: 'No dispone de camareros activos.',
+      buttons: [
+        {
+          text: 'Aceptar',
+          role: 'cancel',
+          handler: () => {
+            console.log("Operacion cancelada");
+          },
+        }
+      ],
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+  }
+
+
 }

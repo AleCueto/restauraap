@@ -1,12 +1,27 @@
-  <ion-avatar>
-    <img *ngIf="!this.dishInput?.image" alt=""
-    src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-    <img *ngIf="this.dishInput != undefined" alt="" [src]="this.imageUrl" />
-  </ion-avatar>
-  {{this.dishInput?.name}} 
-  <ion-button class="item-expanded" slot="end" fill="clear" *ngIf="this.dishInput" (click)="onEditDish(this.dishInput)">
-    {{ "generic.edit" | translate  | uppercase }}
-  </ion-button>
-  <ion-button class="item-expanded" slot="end" fill="clear" *ngIf="this.dishInput" (click)="onDeleteAlert(this.dishInput)">
-    {{ "generic.delete" | translate | uppercase }}
-  </ion-button>
+<ion-card class="card">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3">
+          <img *ngIf="!this.dishInput?.image" alt=""
+          src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          <img *ngIf="this.dishInput != undefined" alt="" [src]="this.imageUrl" />
+      </ion-col>
+      <ion-col size="9">
+        <ion-card-header>
+          <ion-card-title>
+            {{this.dishInput?.name}} 
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{this.dishInput?.price}} $ 
+        </ion-card-content>
+        <ion-button class="item-expanded" slot="end" fill="clear" *ngIf="this.dishInput" (click)="onEditDish(this.dishInput)">
+          {{ "generic.edit" | translate  | uppercase }}
+        </ion-button>
+        <ion-button class="item-expanded" slot="end" fill="clear" *ngIf="this.dishInput" (click)="onDeleteAlert(this.dishInput)">
+          {{ "generic.delete" | translate | uppercase }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>

@@ -14,7 +14,7 @@ export class AppComponent {
     { title: 'pages' + ".dish" , url: '/folder/Dish', icon: 'pizza' },
     { title: 'pages' + ".table" , url: '/folder/Table', icon: 'fast-food' },
     { title: 'pages' + ".waiter" , url: '/folder/Waiter', icon: 'people' },
-    { title: 'pages' + ".commands" , url: '/folder/commands', icon: 'book' },
+    { title: 'pages' + ".commands" , url: '/folder/Commands', icon: 'book' },
     { title: 'pages' + ".about" , url: '/folder/About', icon: 'star' },
     // { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
     // { title: 'Spam', url: '/folder/Spam', icon: 'warning' },

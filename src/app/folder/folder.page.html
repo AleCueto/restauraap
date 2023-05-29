@@ -16,6 +16,7 @@
 
   <div class="container">
     <app-dishes *ngIf="folder == 'Dish'" ></app-dishes>
+    <app-command *ngIf="folder == 'Commands'"></app-command>
     <app-table *ngIf="folder == 'Table' " ></app-table>
     <app-waiters *ngIf="folder == 'Waiter'" ></app-waiters>
     <app-about *ngIf="folder == 'About'"></app-about>
