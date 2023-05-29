@@ -33,4 +33,8 @@ export class CommandComponent implements OnInit {
     }
   }
 
+  downloadJson(){
+    this.commandService.saveJsonFile();
+  }
+
 }
