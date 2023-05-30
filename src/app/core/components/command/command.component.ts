@@ -21,6 +21,7 @@ export class CommandComponent implements OnInit {
   ngOnInit() {
     this.commandService.getCommands().subscribe(commands =>{
       this.commands = commands
+      this.commands = this.commands?.filter((command) => this.checkCommandBelong(command))
     })
   }
 
@@ -34,7 +35,7 @@ export class CommandComponent implements OnInit {
   }
 
   downloadJson(){
-    this.commandService.saveJsonFile();
+    this.commandService.saveJsonFile(this.commands);
   }
 
 }
