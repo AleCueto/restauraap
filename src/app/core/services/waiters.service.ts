@@ -9,32 +9,48 @@ import { Storage, ref } from '@angular/fire/storage';
   providedIn: 'root'
 })
 export class WaitersService {
-  constructor(private firestore:Firestore, 
-              private userService:UserService, 
-              private storage:Storage,) { }
+  constructor(private firestore: Firestore, 
+              private userService: UserService, 
+              private storage: Storage) { }
 
-  addWaiter(waiter:Waiter){
-
-    waiter.idRestaurant = this.userService.getUid()
-
-    waiter.tablesAttended = 0
-
+  /**
+   * Adds a waiter to Firestore collection
+   * @param waiter The waiter object to add
+   * @returns A promise that resolves when the waiter is added
+   */
+  addWaiter(waiter: Waiter) {
+    waiter.idRestaurant = this.userService.getUid();
+    waiter.tablesAttended = 0;
     const waiterRef = collection(this.firestore, 'waiters');
-    console.log(waiter)
+    console.log(waiter);
     return addDoc(waiterRef, waiter);
   }
 
-  getWaiters(): Observable<Waiter[]>{
+  /**
+   * Retrieves the waiters from Firestore collection
+   * @returns An observable of waiter array
+   */
+  getWaiters(): Observable<Waiter[]> {
     const waiterRef = collection(this.firestore, 'waiters');
-    return collectionData(waiterRef, {idField:'id'}) as Observable<Waiter[]>;
+    return collectionData(waiterRef, { idField: 'id' }) as Observable<Waiter[]>;
   }
 
-  deleteWaiter(waiter:Waiter){
+  /**
+   * Deletes a waiter from Firestore collection
+   * @param waiter The waiter object to delete
+   * @returns A promise that resolves when the waiter is deleted
+   */
+  deleteWaiter(waiter: Waiter) {
     const waiterDocRef = doc(this.firestore, `waiters/${waiter.id}`);
     return deleteDoc(waiterDocRef);
   }
 
-  editWaiter(waiter:Waiter){
+  /**
+   * Updates a waiter in Firestore collection
+   * @param waiter The waiter object to update
+   * @returns A promise that resolves when the waiter is updated
+   */
+  editWaiter(waiter: Waiter) {
     console.log(waiter);
     const waiterData = {
       id: waiter.id,
@@ -45,27 +61,19 @@ export class WaitersService {
       isBusy: waiter.isBusy,
       // tablesAttended: waiter.tablesAttended
     }
-
     const waiterDocRef = doc(this.firestore, `waiters/${waiter.id}`);
     return updateDoc(waiterDocRef, waiterData);
   }
 
   /**
-   * Gets from firestore document and returns it
-   * @param id - id of waiter we want to get
-   * @returns specific waiter based on id
+   * Gets a specific waiter from Firestore based on ID
+   * @param id The ID of the waiter to retrieve
+   * @returns An observable that emits the specific waiter object
    */
-  getWaiterById(id:string){
-    // const docRef = doc(this.firestore, "waiters", id);
-    // const docSnap = await getDoc(docRef)
-    // console.log(docSnap.data())
-    // return docSnap.data()
-    
+  getWaiterById(id: string) {
     const docRef = doc(this.firestore, "waiters", id);
     return from(getDoc(docRef)).pipe(
       map(docSnap => docSnap.data())
     );
-
   }
-
 }

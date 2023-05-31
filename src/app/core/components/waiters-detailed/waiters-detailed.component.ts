@@ -12,14 +12,16 @@ import { ImageService } from '../../services/image.service';
 })
 export class WaitersDetailedComponent implements OnInit {
 
-  
-  form:FormGroup;
-  mode:"New" | "Edit" = "New";
+  // Reactive form declaration
+  form: FormGroup;
+  // Mode indicator: "New" or "Edit"
+  mode: "New" | "Edit" = "New";
+  // Array of available images
   images: string[] = [];
 
-  @Input('waiter') set waiter(waiter:Waiter){
-    if(waiter){
-      // this.form.controls['id'].setValue(dish.id);
+  // Setter to set the waiter values in the form
+  @Input('waiter') set waiter(waiter: Waiter) {
+    if (waiter) {
       this.form.controls['name'].setValue(waiter.name);
       this.form.controls['surname'].setValue(waiter.surname);
       this.form.controls['isBusy'].setValue(waiter.isBusy);
@@ -29,43 +31,60 @@ export class WaitersDetailedComponent implements OnInit {
     }
   }
 
-  subsr:Subscription;
+  subsr: Subscription;
+
   constructor(
-    private fb:FormBuilder,
-    private modal:ModalController,
-    private imagesService:ImageService,
+    private fb: FormBuilder,
+    private modal: ModalController,
+    private imagesService: ImageService,
   ) {
-    this.subsr = this.imagesService.images$.subscribe(data=>this.images = data);
+    // Subscription to changes in available images
+    this.subsr = this.imagesService.images$.subscribe(data => this.images = data);
 
-
+    // Initializing the form with fields and validations
     this.form = this.fb.group({
-      name:['', [Validators.required]],
-      surname:['', [Validators.required]],
-      picture:['', [Validators.required]],
-      isBusy:[],
-      enabled:[],
+      name: ['', [Validators.required]],
+      surname: ['', [Validators.required]],
+      picture: ['', [Validators.required]],
+      isBusy: [],
+      enabled: [],
     });
-
   }
 
   ngOnInit() {
+    // Get available images on component initialization
     this.imagesService.getImages();
   }
 
-  onSubmit(){
-    this.modal.dismiss({waiter: this.form.value, mode:this.mode}, 'ok');
+  /**
+   * Method to submit the form and close the modal
+   */
+  onSubmit() {
+    this.modal.dismiss({ waiter: this.form.value, mode: this.mode }, 'ok');
   }
 
-  onDismiss(result:any){
+  /**
+   * Method to dismiss the modal without submitting the form
+   * @param result The result value to dismiss the modal with
+   */
+  onDismiss(result: any) {
     this.modal.dismiss(null, 'cancel');
   }
 
-  uploadImage($event:any){
+  /**
+   * Method to upload an image
+   * @param $event The event containing the uploaded image
+   */
+  uploadImage($event: any) {
     this.imagesService.uploadImage($event)
   }
 
-  getImages(){
-    return this.images
+  /**
+   * Method to get the available images
+   * @returns The array of available images
+   */
+  getImages() {
+    return this.images;
   }
 
 }
