@@ -83,7 +83,6 @@ export class TablesDetailedComponent implements OnInit {
         this.waitersService.editWaiter(this.actualWaiter);
     
       }
-    }
     
     this.waitersService.getWaiterById(this.form.value.idWaiter).subscribe(
       waiter => {
@@ -98,7 +97,8 @@ export class TablesDetailedComponent implements OnInit {
         error => console.log(error)
     );
 
-    console.log("VALUE: " + this.form.value.tablesAttended)
+  }
+
 
     this.modal.dismiss({table: this.form.value, mode:this.mode}, 'ok');
   }
