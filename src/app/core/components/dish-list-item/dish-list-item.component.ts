@@ -53,7 +53,7 @@ export class DishListItemComponent implements OnInit {
 
 
   async deleteDish(dish:Dish){
-    console.log("rfwe");
+    // console.log("rfwe");
     await this.dishesService.deleteDish(dish);
   }
 

@@ -22,7 +22,7 @@ export class WaitersService {
     waiter.idRestaurant = this.userService.getUid();
     waiter.tablesAttended = 0;
     const waiterRef = collection(this.firestore, 'waiters');
-    console.log(waiter);
+    // console.log(waiter);
     return addDoc(waiterRef, waiter);
   }
 
@@ -51,7 +51,7 @@ export class WaitersService {
    * @returns A promise that resolves when the waiter is updated
    */
   editWaiter(waiter: Waiter) {
-    console.log(waiter);
+    // console.log(waiter);
     const waiterData = {
       id: waiter.id,
       name: waiter.name,
@@ -59,6 +59,7 @@ export class WaitersService {
       picture: waiter.picture,
       enabled: waiter.enabled,
       isBusy: waiter.isBusy,
+      tablesAttended: waiter.tablesAttended
       // tablesAttended: waiter.tablesAttended
     }
     const waiterDocRef = doc(this.firestore, `waiters/${waiter.id}`);

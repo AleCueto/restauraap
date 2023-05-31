@@ -45,7 +45,7 @@ export class WaiterSelectableComponent implements OnInit, ControlValueAccessor {
       this.getWaiters().pipe(
         map((waitersArray: Waiter[]) => waitersArray.find(value => value.id === obj))
       ).subscribe((foundValue?: Waiter) => {
-        console.log(foundValue?.id);
+        // console.log(foundValue?.id);
         
         this.itemSelected = foundValue
 

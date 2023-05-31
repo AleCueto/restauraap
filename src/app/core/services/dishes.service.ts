@@ -20,7 +20,7 @@ export class DishesService {
     dish.idRestaurant = this.userService.getUid();
 
     const dishRef = collection(this.firestore, 'dishes');
-    console.log(dish);
+    // console.log(dish);
     return addDoc(dishRef, dish);
   }
 
@@ -49,7 +49,7 @@ export class DishesService {
    * @returns A promise that resolves when the dish is updated successfully
    */
   editDish(dish: Dish) {
-    console.log(dish);
+    // console.log(dish);
     const dishData = {
       id: dish.id,
       name: dish.name,

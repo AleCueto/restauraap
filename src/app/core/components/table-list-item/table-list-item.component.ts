@@ -145,6 +145,7 @@ export class TableListItemComponent implements OnInit {
     console.log("rew:" + this.waiter.id)
 
     if (this.waiter.tablesAttended <= 0) {
+      console.log(this.waiter.tablesAttended)
       this.waiter.isBusy = false;
     }
 
@@ -170,13 +171,16 @@ export class TableListItemComponent implements OnInit {
 
     console.log("REWERFWREFW: " + waitersRandom)
 
-    const waiterNotBussy = waitersRandom.find((w) => w.isBusy == false)
+    let waiterNotBussy = waitersRandom.find((w) => w.isBusy == false)
     if (waiterNotBussy) {
       //Set waiter bussy
+
       waiterNotBussy.tablesAttended++;
       waiterNotBussy.isBusy = true
+      
+      console.log("waiter not bussy tables: " + waiterNotBussy.tablesAttended )
       this.waiterService.editWaiter(waiterNotBussy)
-      console.log(waiterNotBussy)
+      console.log("waiter not bussy id: " + waiterNotBussy.id )
 
       //Set tables's waiter as waiternotbussy
       const table = this.tableInput
@@ -196,13 +200,13 @@ export class TableListItemComponent implements OnInit {
       });
     }
       
+
     if (!waiterNotBussy && waiterLessBussy) {
 
       //Set waiter bussy
       waiterLessBussy.tablesAttended++;
       waiterLessBussy.isBusy = true
       this.waiterService.editWaiter(waiterLessBussy)
-      console.log(waiterLessBussy)
 
       //Set tables's waiter as waiternotbussy
       const table = this.tableInput

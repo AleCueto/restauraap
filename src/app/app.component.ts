@@ -33,8 +33,8 @@ export class AppComponent {
   }
 
   logout(){
-    this.router.navigate(['/folder/Dish']);
     this.userService.logout();
+    this.router.navigate(['/folder/register']);
   }
 
 }

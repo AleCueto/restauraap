@@ -25,7 +25,7 @@ export class TableComponent implements OnInit {
   ) { }
   
   ngOnInit() {
-    this.tableService.getTable().subscribe(tables =>{
+    this.tableService.getTables().subscribe(tables =>{
       this.tables = tables;
       this.tables = this.tables?.filter(e => this.checkTableBelong(e));
     })

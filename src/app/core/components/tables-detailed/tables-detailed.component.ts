@@ -76,6 +76,7 @@ export class TablesDetailedComponent implements OnInit {
         this.actualWaiter.tablesAttended--;
         //RESTAR
         if(this.actualWaiter.tablesAttended <= 0){
+          console.log(this.actualWaiter.tablesAttended)
           this.actualWaiter.isBusy = false;
         }
     

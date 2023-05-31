@@ -45,7 +45,7 @@ export class WaiterListItemComponent implements OnInit {
 
 
   async deleteWaiter(waiter:Waiter){
-    console.log("rfwe");
+    // console.log("rfwe");
     await this.waiterService.deleteWaiter(waiter);
   }
 
