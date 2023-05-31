@@ -19,14 +19,18 @@ export class WaitersDetailedComponent implements OnInit {
   // Array of available images
   images: string[] = [];
 
+  tablesAttendedLocal:number = 0;
+
   // Setter to set the waiter values in the form
   @Input('waiter') set waiter(waiter: Waiter) {
     if (waiter) {
+      this.tablesAttendedLocal = waiter.tablesAttended
       this.form.controls['name'].setValue(waiter.name);
       this.form.controls['surname'].setValue(waiter.surname);
       this.form.controls['isBusy'].setValue(waiter.isBusy);
       this.form.controls['enabled'].setValue(waiter.enabled);
       this.form.controls['picture'].setValue(waiter.picture);
+
       this.mode = "Edit";
     }
   }
@@ -60,6 +64,7 @@ export class WaitersDetailedComponent implements OnInit {
    * Method to submit the form and close the modal
    */
   onSubmit() {
+    this.form.value.tablesAttended = this.tablesAttendedLocal;
     this.modal.dismiss({ waiter: this.form.value, mode: this.mode }, 'ok');
   }
 

@@ -19,7 +19,7 @@ export class TableService {
   addTable(table: Table) {
     table.idRestaurant = this.userService.getUid();
     const tableRef = collection(this.firestore, 'tables');
-    console.log(table);
+    // console.log(table);
     return addDoc(tableRef, table);
   }
 
@@ -48,8 +48,8 @@ export class TableService {
    * @returns A promise that resolves when the table is updated
    */
   editTable(table: Table) {
-    console.log(table);
-    console.log(table.idWaiter);
+    // console.log(table);
+    // console.log(table.idWaiter);
     const tableData = {
       id: table.id,
       number: table.number,

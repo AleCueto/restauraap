@@ -91,12 +91,14 @@ export class TablesDetailedComponent implements OnInit {
         this.newWaiter = waiter;
         this.newWaiter.id = this.form.value.idWaiter
         console.log("NEW WAITER "  +  this.newWaiter.id)
-        this.newWaiter.tablesAttended ++;
+        this.newWaiter.tablesAttended++;
         this.newWaiter.isBusy = true
         this.waitersService.editWaiter(this.newWaiter)
         },
         error => console.log(error)
     );
+
+    console.log("VALUE: " + this.form.value.tablesAttended)
 
     this.modal.dismiss({table: this.form.value, mode:this.mode}, 'ok');
   }
