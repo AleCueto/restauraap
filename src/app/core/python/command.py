@@ -3,52 +3,69 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import shutil
 
-# Create the 'graficos' directory
+# Obtener la ruta completa del archivo "datos.json"
+ruta_datos = os.path.join(os.path.dirname(__file__), 'datos.json')
+
+# Crear el directorio 'graficos'
 os.makedirs('graficos', exist_ok=True)
 
 # Cargar el JSON en un DataFrame de Pandas
-df = pd.read_json('datos.json')
+df = pd.read_json(ruta_datos)
 
 # Total de ventas
 total_ventas = df['totalPrice'].sum()
 
-# Promedio de precio por plato
-promedio_precio = df['dishesList'].apply(lambda dishes: sum([dish['price'] for dish in dishes]) / len(dishes)).mean()
+# Obtener el conteo de platos
+conteo_platos = df['dishesList'].explode().apply(lambda dish: dish['name']).value_counts()
 
-# Platos más populares
-platos_populares = df['dishesList'].explode().apply(lambda dish: tuple(dish.items())).value_counts().nlargest(5)
+# Obtener el nombre de cada comanda y sus platos
+nombres_comandas = df['title']
+platos_por_comanda = df['dishesList'].apply(lambda dishes: ', '.join([dish['name'] for dish in dishes]))
 
-# Total de comandos por restaurante
-comandos_por_restaurante = df['idRestaurant'].value_counts()
+# Cantidad de comandas y cantidad de platos totales
+cantidad_comandas = df.shape[0]
+cantidad_platos_totales = df['dishesList'].explode().shape[0]
 
-# Análisis de precios
-analisis_precios = df['dishesList'].apply(lambda dishes: pd.Series([dish['price'] for dish in dishes]).describe())
+# Cantidad de platos por comanda
+cantidad_platos_por_comanda = df['dishesList'].apply(lambda dishes: len(dishes))
 
 # Crear un gráfico de barras para el total de comandos por restaurante
+comandos_por_restaurante = df['idRestaurant'].value_counts()
 comandos_por_restaurante.plot(kind='bar', rot=0)
 plt.xlabel('ID de Restaurante')
 plt.ylabel('Cantidad de Comandos')
 plt.title('Total de Comandos por Restaurante')
-plt.savefig('graficos/grafico_comandos_restaurante.png')  # Save the graph image inside the 'graficos' directory
+plt.savefig('graficos/grafico_comandos_restaurante.png')  # Guardar la imagen del gráfico en el directorio 'graficos'
 
 # Crear un histograma de los precios de los platos
 plt.hist(df['dishesList'].explode().apply(lambda dish: dish['price']), bins=10)
 plt.xlabel('Precio')
 plt.ylabel('Frecuencia')
 plt.title('Distribución de Precios de los Platos')
-plt.savefig('graficos/histograma_precios_platos.png')  # Save the histogram image inside the 'graficos' directory
+plt.savefig('graficos/histograma_precios_platos.png')  # Guardar la imagen del histograma en el directorio 'graficos'
 
-# Guardar el reporte en un archivo CSV
+# Exportar los datos de las comandas a un archivo CSV
+df.to_csv('comandas.csv', index=False)
+
+# Crear un DataFrame con la información del reporte
 reporte = pd.DataFrame({
-    'Total de Ventas': [total_ventas],
-    'Promedio de Precio por Plato': [promedio_precio]
+    'Total de Ventas': total_ventas,
+    'Cantidad de Comandas': cantidad_comandas,
+    'Cantidad de Platos Totales': cantidad_platos_totales,
+    'Platos Repetidos': conteo_platos,
+    'Nombres de Comandas': nombres_comandas,
+    'Platos por Comanda': platos_por_comanda,
+    'Cantidad de Platos por Comanda': cantidad_platos_por_comanda
+    # Agrega más columnas según tus necesidades
 })
+
+# Exportar el reporte a un archivo CSV
 reporte.to_csv('reporte.csv', index=False)
 
-# Comprimir los gráficos en un archivo zip
+# Comprimir los gráficos en un archivo ZIP
 shutil.make_archive('graficos', 'zip', 'graficos')
 
-# Cambiar el nombre del archivo zip
+# Cambiar el nombre del archivo ZIP
 shutil.move('graficos.zip', 'graficos_reporte.zip')
 
 # Crear un enlace de descarga
