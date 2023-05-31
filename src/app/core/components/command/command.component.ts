@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Command } from '../../models/command.model';
 import { UserService } from '../../services/user.service';
 import { CommandService } from '../../services/command.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-command',
@@ -15,7 +16,7 @@ export class CommandComponent implements OnInit {
   constructor(
     private userService:UserService,
     private commandService:CommandService,
-
+    private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit() {
@@ -36,6 +37,20 @@ export class CommandComponent implements OnInit {
 
   downloadJson(){
     this.commandService.saveJsonFile(this.commands);
+  }
+
+  getDownloadLink() {
+    const filePath = 'src\\app\\core\\python\\datos.json';
+    return this.sanitizer.bypassSecurityTrustUrl(filePath);
+  }
+
+  downloadFile(): void {
+    const filePath = '../../python/graficos_reporte.zip'; // Reemplaza con la ruta correcta a tu archivo JSON
+    const link = document.createElement('a');
+    link.href = filePath;
+    link.download = 'report.zip'; // Reemplaza con el nombre que deseas que tenga el archivo JSON descargado
+    link.target = '_blank'; // Para abrir el enlace en una nueva pestaña (opcional)
+    link.click();
   }
 
 }
