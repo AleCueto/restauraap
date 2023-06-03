@@ -26,13 +26,13 @@ export class ImageService {
    */
   uploadImage($event: any) {
     const file = $event.target.files[0];
-    console.log(file);
+    // console.log(file);
 
     const imgRef = ref(this.storage, `images/${file.name}`);
 
     uploadBytes(imgRef, file)
       .then(response => {
-        console.log(response);
+        // console.log(response);
         this.getImages();
       })
       .catch(error => console.log(error));
@@ -50,13 +50,13 @@ export class ImageService {
 
         for (let item of response.items) {
           const url = await getDownloadURL(item);
-          console.log(url);
+          // console.log(url);
           this.images?.push(url);
         }
 
         this.imagesSubject.next(this.images);
 
-        console.log(this.images);
+        // console.log(this.images);
       })
       .catch(error => console.log(error));
   }

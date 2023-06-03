@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private router: Router
+    private router: Router,
   ) {
 
     this.formLogin = new FormGroup({
@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
   }
 
   onSubmit() {
@@ -33,7 +32,7 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.formLogin.value)
     .then(response => {
       console.log(response);
-      this.router.navigate(['/folder/Dish']);
+      this.router.navigate(['/folder/Home']);
     })
     .catch(error => console.log(error));
   }
@@ -42,7 +41,7 @@ export class LoginComponent implements OnInit {
     this.userService.loginWithGoogle()
     .then(response =>{
       console.log(response);
-      this.router.navigate(['/folder/Dish']);
+      this.router.navigate(['/folder/Home']);
     })
     .catch(error => console.log(error))
   }
@@ -50,5 +49,6 @@ export class LoginComponent implements OnInit {
   goRegister(){
     this.router.navigate(['/register']);
   }
+
 
 }

@@ -13,6 +13,15 @@
 </ion-button> -->
 <ion-card>
   <ion-card-header>
+
+    <ion-fab style="z-index: 10; position: absolute; top: 0; right: 0; margin-top: 20px; margin-right: 20px; font-size: 10px; padding: 0; text-align: center;">
+      <ion-fab-button (click)="autoAssingWaiters()">
+        <ion-icon name="cog-outline"></ion-icon>
+      Auto
+      </ion-fab-button>
+
+    </ion-fab>
+
     <span>
       <ion-card-title>{{this.tableInput?.number}}</ion-card-title>
         <img src="/assets/images/mesa.png" alt="table image">
@@ -20,12 +29,12 @@
     <!-- <ion-card-subtitle *ngIf="this.tableInput!.idWaiter == ''">Needs Attention</ion-card-subtitle>
     <ion-card-subtitle *ngIf="this.tableInput!.idWaiter != ''">Attended</ion-card-subtitle> -->
   
-    <div *ngIf="this.tableInput!.idWaiter != ''">
+    <div *ngIf="this.tableInput!.idWaiter != ''" >
       <ion-avatar style="position: relative;">
+        <ion-img [src]="waiterImageUrl" (click)="onEdittable(this.tableInput!)"></ion-img>
         <ion-fab-button style="z-index: 10; position: absolute; top: 0; right: 0; margin-top: -20px; margin-right: -20px; font-size: 10px; padding: 0; text-align: center;" size="small" (click)="cleanWaiter()">
           x
         </ion-fab-button>
-        <ion-img [src]="waiterImageUrl"></ion-img>
       </ion-avatar>
       
       <div style="padding:15px">
@@ -35,20 +44,20 @@
     
   
     <div *ngIf="this.tableInput!.idWaiter == ''">
-      <h1>NO WAITER</h1>
+      <!-- <h1>NO WAITER</h1> -->
+      <ion-avatar style="position: relative;">
+        <ion-img *ngIf="this.tableInput?.idWaiter == ''" alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" (click)="onEdittable(this.tableInput!)"></ion-img>
+      </ion-avatar>
+      
+      <div style="padding:15px">
+        No waiter assigned
+      </div>
     </div>
   
   </ion-card-header>
 
   <ion-card-content>
     {{this.tableInput?.info}}
-
-    <ion-fab vertical="top" horizontal="end" slot="fixed">
-      <ion-fab-button (click)="autoAssingWaiters()">
-        <ion-icon name="add"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-
   </ion-card-content>
 
 

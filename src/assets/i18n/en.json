@@ -26,7 +26,8 @@
         "table":"Tables",
         "waiter":"Waiters",
         "commands":"Commands",
-        "about":"About Me"
+        "about":"About Me",
+        "login":"Login"
     },
     "about":{
         "introduce":"My name is Alejandro Cueto Jiménez, im application and videogames developer",

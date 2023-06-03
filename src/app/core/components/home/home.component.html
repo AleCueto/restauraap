@@ -1,0 +1,29 @@
+<ion-grid>
+  <ion-row>
+    <ion-col size="12" size-lg="4" (click)="navigate('/folder/Dish')">
+      <div class="imagen-container">
+        <img src="assets/images/home/hamburguer.jpeg" class="imagen-columna">
+      </div>
+    </ion-col>
+    <ion-col size="12" size-lg="4" (click)="navigate('/folder/Table')">
+      <div class="imagen-container">
+      <img src="assets/images/home/tables.jpg" class="imagen-columna">
+      </div>
+    </ion-col>
+    <ion-col size="12" size-lg="4" (click)="navigate('/folder/Waiter')">
+      <div class="imagen-container">
+      <img src="assets/images/home/waiters.jpg" class="imagen-columna">
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col (click)="navigate('/folder/Commands')">
+      <div *ngIf="!this.isSmallScreen" class="imagen-container-grande">
+        <img src="assets/images/home/command.jpg" class="imagen-columna">
+      </div>
+      <div *ngIf="this.isSmallScreen" class="imagen-container">
+        <img src="assets/images/home/command.jpg" class="imagen-columna">
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

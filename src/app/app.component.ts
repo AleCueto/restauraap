@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { UserService } from './core/services/user.service';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
+import { IonRouterOutlet, MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+
   public appPages = [
-    { title: 'pages' + ".home" , url: '/home', icon: 'home' },
+    { title: 'pages' + ".home" , url: '/folder/Home', icon: 'home' },
     { title: 'pages' + ".dish" , url: '/folder/Dish', icon: 'pizza' },
     { title: 'pages' + ".table" , url: '/folder/Table', icon: 'fast-food' },
     { title: 'pages' + ".waiter" , url: '/folder/Waiter', icon: 'people' },
@@ -23,7 +25,8 @@ export class AppComponent {
   constructor(
     private translate:TranslateService,
     private userService:UserService,
-    private router:Router
+    private router:Router,
+    private menuController: MenuController
   ) {
     this.translate.setDefaultLang('en');
   }
@@ -33,8 +36,14 @@ export class AppComponent {
   }
 
   logout(){
+    this.closeMenuToggle();
     this.userService.logout();
-    this.router.navigate(['/folder/register']);
+    this.router.navigate(['/login']);
   }
+  
+  closeMenuToggle() {
+    this.menuController.toggle();
+  }
+
 
 }

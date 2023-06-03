@@ -36,8 +36,8 @@
   <ion-grid>
     <ion-row>
       <ion-col size="3">
-        <img *ngIf="!this.waiterInput?.picture" alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-        <img *ngIf="this.waiterInput != undefined" alt="" [src]="this.imageUrl" />
+        <img *ngIf="!this.waiterInput?.picture" class="avatar-img" alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        <img *ngIf="this.waiterInput != undefined" class="avatar-img" alt="" [src]="this.imageUrl" />
       </ion-col>
       <ion-col size="9">
         <ion-card-header>

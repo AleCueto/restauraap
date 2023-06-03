@@ -16,8 +16,10 @@
           <br>
           <ion-list>
             <ion-item *ngFor="let i of commandInput?.dishesList">
-              <app-dish-list-item [dishInput]="i"></app-dish-list-item>
+              <app-dish-list-item class="dish-item" [dishInput]="i"></app-dish-list-item>
             </ion-item>
+          </ion-list>
+          <ion-list>
           </ion-list>
           TOTAL PRICE : {{this.commandInput?.totalPrice}} $ 
         </ion-card-content>

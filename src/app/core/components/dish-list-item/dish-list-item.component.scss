@@ -1,0 +1,11 @@
+.img-container {
+    display: flex;
+    max-width: none;
+  }
+  
+  .img-container img {
+    width: 100px !important;
+    max-width: none;
+    height: 100px !important; /* Cambia el valor según el tamaño deseado */
+    object-fit: cover; /* Ajusta la imagen dentro del contenedor */
+  }

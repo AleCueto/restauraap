@@ -2,9 +2,11 @@
   <ion-grid>
     <ion-row>
       <ion-col size="3">
+        <div class="img-container">
           <img *ngIf="!this.dishInput?.image" alt=""
           src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           <img *ngIf="this.dishInput != undefined" alt="" [src]="this.imageUrl" />
+        </div>
       </ion-col>
       <ion-col size="9">
         <ion-card-header>
