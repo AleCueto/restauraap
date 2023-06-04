@@ -16,10 +16,12 @@
         "number":"Numero",
         "info":"Info",
         "image":"Imagen",
-        "enabled":"Habilitado"
+        "enabled":"Habilitado",
+        "logout":"Cerrar sesión",
+        "price":"Precio"
     },
     "pages":{
-        "home":"Home",
+        "home":"Inicio",
         "register":"Registro",
         "title":"Menu",
         "dish":"Platos",
@@ -43,8 +45,22 @@
         "needsAttention":"Necesita atención"
     },
     "waiter":{
-        "bussy":"Ocupado"
+        "bussy":"Ocupado",
+        "edit":"Editar camarero",
+        "create":"Crear camarero"
+    },
+    "dishes":{
+        "edit":"Editar plato",
+        "create":"Crear plato",
+        "warning":"¿Está seguro de que desea borrar este plato?"
+    },
+    "account":{
+        "delete":"Borrar cuenta"
+    },
+    "commands":{
+        "report":"Descargar el reporte json"
     }
+
 
 
 

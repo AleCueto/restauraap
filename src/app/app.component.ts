@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { UserService } from './core/services/user.service';
 import { Router, RouterOutlet } from '@angular/router';
-import { IonRouterOutlet, MenuController } from '@ionic/angular';
+import { AlertController, IonRouterOutlet, MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +26,8 @@ export class AppComponent {
     private translate:TranslateService,
     private userService:UserService,
     private router:Router,
-    private menuController: MenuController
+    private menuController: MenuController,
+    private alert: AlertController
   ) {
     this.translate.setDefaultLang('en');
   }
@@ -45,5 +46,36 @@ export class AppComponent {
     this.menuController.toggle();
   }
 
+  deleteAccount(){
+    this.closeMenuToggle();
+    this.router.navigate(['/login']);
+    this.userService.deleteAccount();
+  }
 
+
+  
+  async onDeleteAlert() {
+    const alert = await this.alert.create({
+      header: 'Atención',
+      message: '¿Está seguro de que desea borrar su cuenta? (todos sus datos se perderán)',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            console.log("Operación cancelada");
+          },
+        },
+        {
+          text: 'Borrar',
+          role: 'confirm',
+          handler: async () => {
+            await this.deleteAccount();
+          },
+        },
+      ],
+    });
+  
+    await alert.present();
+  }
 }

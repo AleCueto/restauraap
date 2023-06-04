@@ -17,9 +17,12 @@
               <ion-label>{{ p.title | translate}}</ion-label>
             </ion-item>
           </ion-menu-toggle>
-          <ion-button (click)="logout()">Log Out</ion-button>
-        </ion-list>
-
+          <ion-button (click)="logout()">{{"generic.logout"|translate}}</ion-button>
+          <div>
+            <ion-button (click)="onDeleteAlert()">{{"account.delete"|translate}}</ion-button>
+          </div>
+          </ion-list>
+          
         <!-- <ion-list id="labels-list">
           <ion-list-header>Labels</ion-list-header>
 

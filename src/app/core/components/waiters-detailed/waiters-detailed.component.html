@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{"" | translate}}</ion-title>
+    <ion-title>{{(mode=="Edit"?"waiter.edit":"waiter.create") | translate}}</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="onDismiss(null)">{{"generic.cancel" | translate}}</ion-button>
     </ion-buttons>
@@ -24,7 +24,7 @@
       <ion-label position="floating">
         {{"generic.image"| translate}}
       </ion-label>
-      <ion-input type="file" (change)="uploadImage($event)" formControlName="picture"></ion-input>
+      <ion-input type="file" (change)="uploadImage($event)" formControlName="picture"  placeholder="Introduce la imagen" ></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{"" | translate}}</ion-title>
+    <ion-title>{{(mode=="Edit"?"dishes.edit":"dishes.create") | translate}}</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="onDismiss(null)">{{"generic.cancel" | translate}}</ion-button>
     </ion-buttons>
@@ -16,19 +16,18 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating">
-        {{"" | translate}}
+        {{"generic.price" | translate}}
         
       </ion-label>
       <ion-input type="number" placeholder="Introduce el precio" formControlName="price"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">
-        {{""| translate}}
+        {{"generic.image"| translate}}
       </ion-label>
       <ion-input type="file" (change)="uploadImage($event)" placeholder="Introduce la imagen" formControlName="image"></ion-input>
     </ion-item>
   </form>
-  <input type="file" (change)="uploadImage($event)">
 </ion-content>
 <ion-footer>
   <ion-grid>

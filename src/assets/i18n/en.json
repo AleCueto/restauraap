@@ -16,7 +16,9 @@
         "number":"Number",
         "info":"Info",
         "image":"Image",
-        "enabled":"Enabled"
+        "enabled":"Enabled",
+        "logout":"Log Out",
+        "price":"Price"
     },
     "pages":{
         "home":"Home",
@@ -41,8 +43,20 @@
         "needsAttention":"Needs attention"
     },
     "waiter":{
-        "bussy":"Bussy"
+        "bussy":"Bussy",
+        "edit":"Edit waiter",
+        "create":"Create waiter"
+    },
+    "dishes":{
+        "edit":"Edit dish",
+        "create":"Create dish",
+        "warning":"¿Are you sure you want to remove this dish?"
+    },
+    "account":{
+        "delete":"Delete account"
+    },
+    "commands":{
+        "report":"Download json report"
     }
-
 
 }
