@@ -1,5 +1,4 @@
-<button (click)="downloadJson()">rw</button>
-<button (click)="downloadFile()">Descargar archivo</button>
+<!-- <button (click)="downloadFile()">Descargar archivo</button> -->
 <ion-grid>
   <ion-row>
     <ion-col *ngFor="let i of commands" size="12">
@@ -7,5 +6,6 @@
         <app-command-list-item [commandInput]="i"></app-command-list-item>
       </div>
     </ion-col>
+  <ion-button (click)="downloadJson()">Download JSON report</ion-button>
 </ion-row>
 </ion-grid>

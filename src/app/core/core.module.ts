@@ -22,10 +22,11 @@ import { WaiterSelectableComponent } from './components/waiter-selectable/waiter
 import { CommandComponent } from './components/command/command.component';
 import { CommandListItemComponent } from './components/command-list-item/command-list-item.component';
 import { HomeComponent } from './components/home/home.component';
+import { ComandDishItemComponent } from './components/comand-dish-item/comand-dish-item.component'
 
 
 @NgModule({
-  declarations: [DishesComponent, DishesDetailedComponent, DishListItemComponent, LoginComponent, RegisterComponent, MainComponent, TableComponent, TablesDetailedComponent, TableListItemComponent, WaitersComponent, WaiterListItemComponent, WaitersDetailedComponent, WaiterSelectableComponent, AboutComponent, CommandComponent, CommandListItemComponent, HomeComponent],
+  declarations: [DishesComponent, DishesDetailedComponent, DishListItemComponent, LoginComponent, RegisterComponent, MainComponent, TableComponent, TablesDetailedComponent, TableListItemComponent, WaitersComponent, WaiterListItemComponent, WaitersDetailedComponent, WaiterSelectableComponent, AboutComponent, CommandComponent, CommandListItemComponent, HomeComponent, ComandDishItemComponent],
   imports: [
     CommonModule,
     IonicModule,
@@ -65,7 +66,8 @@ import { HomeComponent } from './components/home/home.component';
     WaitersDetailedComponent,
     WaiterSelectableComponent,
     CommandListItemComponent,
-    HomeComponent
+    HomeComponent,
+    ComandDishItemComponent
     ]
 })
 export class CoreModule { 

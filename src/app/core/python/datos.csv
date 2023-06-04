@@ -1,0 +1,24 @@
+title,platos
+Field,Value
+description,COSITAS
+totalPrice,12.25
+title,platos
+idRestaurant,QbIroJ72ubdMxejXukE35YEPZYg1
+idTable,BjMANYlUMUhfBoFnpD9U
+id,hxneTvLebvP4gJkxHL7o
+Index,Name,IdDish,IdRestaurant,Price,Count
+1,Salad,24AVwMroezilsxunKAOP,VUtQZA2p5QZElnlLJbvx6C2FgIx2,4,1
+1,Kiwi,7rf8sGlsUDpSffSXLBen,VUtQZA2p5QZElnlLJbvx6C2FgIx2,12.25,1
+
+title,Cueto comanda
+Field,Value
+description,Esta es la descripcion de la cuetocomanda
+title,Cueto comanda
+idTable,TD3mdnfQnMVR559W7uvP
+totalPrice,28.5
+idRestaurant,QbIroJ72ubdMxejXukE35YEPZYg1
+id,m8D71ldGnmYrSOZaHPqU
+Index,Name,IdDish,IdRestaurant,Price,Count
+1,Salad,24AVwMroezilsxunKAOP,VUtQZA2p5QZElnlLJbvx6C2FgIx2,4,1
+1,Kiwi,7rf8sGlsUDpSffSXLBen,VUtQZA2p5QZElnlLJbvx6C2FgIx2,12.25,2
+

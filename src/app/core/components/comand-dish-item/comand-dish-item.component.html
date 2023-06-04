@@ -1,0 +1,7 @@
+<ion-item>
+  <ion-thumbnail slot="start">
+    <img *ngIf="!this.dishInput?.image" alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    <img *ngIf="this.dishInput != undefined" alt="" [src]="this.imageUrl" />
+  </ion-thumbnail>
+  <ion-label> {{this.dishInput?.name}} | {{this.dishInput?.price}} $  </ion-label>
+</ion-item>

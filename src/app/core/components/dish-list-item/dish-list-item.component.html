@@ -16,13 +16,15 @@
         </ion-card-header>
         <ion-card-content>
           {{this.dishInput?.price}} $ 
+          <div>
+            <ion-button class="item-expanded" slot="end" *ngIf="this.dishInput" (click)="onEditDish(this.dishInput)">
+              {{ "generic.edit" | translate  | uppercase }}
+            </ion-button>
+            <ion-button class="item-expanded" slot="end" *ngIf="this.dishInput" (click)="onDeleteAlert(this.dishInput)">
+              {{ "generic.delete" | translate | uppercase }}
+            </ion-button>
+          </div>
         </ion-card-content>
-        <ion-button class="item-expanded" slot="end" fill="clear" *ngIf="this.dishInput" (click)="onEditDish(this.dishInput)">
-          {{ "generic.edit" | translate  | uppercase }}
-        </ion-button>
-        <ion-button class="item-expanded" slot="end" fill="clear" *ngIf="this.dishInput" (click)="onDeleteAlert(this.dishInput)">
-          {{ "generic.delete" | translate | uppercase }}
-        </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

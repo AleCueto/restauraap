@@ -1,73 +1,49 @@
 import os
 import pandas as pd
-import matplotlib.pyplot as plt
-import shutil
+import csv
+import json
+from collections import OrderedDict
 
 # Obtener la ruta completa del archivo "datos.json"
-ruta_datos = os.path.join(os.path.dirname(__file__), 'datos.json')
+ruta_datos = os.path.join(os.path.dirname(__file__), '')
+ruta_datos_json = os.path.join(ruta_datos, 'datos.json')
+ruta_datos_csv = os.path.join(ruta_datos, 'datos.csv')
 
-# Crear el directorio 'graficos'
-os.makedirs('graficos', exist_ok=True)
+# Cargar el JSON en una lista de comandas con OrderedDict
+with open(ruta_datos_json) as file:
+    data = json.load(file, object_pairs_hook=OrderedDict)
 
-# Cargar el JSON en un DataFrame de Pandas
-df = pd.read_json(ruta_datos)
+# Convertir las comandas en la estructura deseada
+datos = []
+for comanda in data:
+    datos.append(["title", comanda.get("title", "")])
+    datos.append([])
+    datos[-1].extend(["Field", "Value"])
+    for key, value in comanda.items():
+        if key != "dishesList":
+            datos.append([key, str(value)])
 
-# Total de ventas
-total_ventas = df['totalPrice'].sum()
+    # Agregar la lista de platos al final de la comanda
+    if "dishesList" in comanda:
+        datos.append([])
+        datos[-1].extend(["Index", "Name", "IdDish", "IdRestaurant", "Price", "Count"])
+        dish_count = {}
+        for dish in comanda["dishesList"]:
+            dish_id = dish.get("id", "")
+            dish_count[dish_id] = dish_count.get(dish_id, 0) + 1
+            if dish_count[dish_id] == 1:
+                row = [str(dish_count[dish_id])] + [str(dish.get(key, "")) for key in ["name", "id", "idRestaurant", "price"]] + [str(dish_count[dish_id])]
+                datos.append(row)
+            else:
+                for i in range(len(datos) - 1, 0, -1):
+                    if datos[i][2] == dish_id:
+                        datos[i][-1] = str(dish_count[dish_id])
+                        break
+        datos.append([])
 
-# Obtener el conteo de platos
-conteo_platos = df['dishesList'].explode().apply(lambda dish: dish['name']).value_counts()
+# Escribir los datos en el archivo CSV
+with open(ruta_datos_csv, 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerows(datos)
 
-# Obtener el nombre de cada comanda y sus platos
-nombres_comandas = df['title']
-platos_por_comanda = df['dishesList'].apply(lambda dishes: ', '.join([dish['name'] for dish in dishes]))
-
-# Cantidad de comandas y cantidad de platos totales
-cantidad_comandas = df.shape[0]
-cantidad_platos_totales = df['dishesList'].explode().shape[0]
-
-# Cantidad de platos por comanda
-cantidad_platos_por_comanda = df['dishesList'].apply(lambda dishes: len(dishes))
-
-# Crear un gráfico de barras para el total de comandos por restaurante
-comandos_por_restaurante = df['idRestaurant'].value_counts()
-comandos_por_restaurante.plot(kind='bar', rot=0)
-plt.xlabel('ID de Restaurante')
-plt.ylabel('Cantidad de Comandos')
-plt.title('Total de Comandos por Restaurante')
-plt.savefig('graficos/grafico_comandos_restaurante.png')  # Guardar la imagen del gráfico en el directorio 'graficos'
-
-# Crear un histograma de los precios de los platos
-plt.hist(df['dishesList'].explode().apply(lambda dish: dish['price']), bins=10)
-plt.xlabel('Precio')
-plt.ylabel('Frecuencia')
-plt.title('Distribución de Precios de los Platos')
-plt.savefig('graficos/histograma_precios_platos.png')  # Guardar la imagen del histograma en el directorio 'graficos'
-
-# Exportar los datos de las comandas a un archivo CSV
-df.to_csv('comandas.csv', index=False)
-
-# Crear un DataFrame con la información del reporte
-reporte = pd.DataFrame({
-    'Total de Ventas': total_ventas,
-    'Cantidad de Comandas': cantidad_comandas,
-    'Cantidad de Platos Totales': cantidad_platos_totales,
-    'Platos Repetidos': conteo_platos,
-    'Nombres de Comandas': nombres_comandas,
-    'Platos por Comanda': platos_por_comanda,
-    'Cantidad de Platos por Comanda': cantidad_platos_por_comanda
-    # Agrega más columnas según tus necesidades
-})
-
-# Exportar el reporte a un archivo CSV
-reporte.to_csv('reporte.csv', index=False)
-
-# Comprimir los gráficos en un archivo ZIP
-shutil.make_archive('graficos', 'zip', 'graficos')
-
-# Cambiar el nombre del archivo ZIP
-shutil.move('graficos.zip', 'graficos_reporte.zip')
-
-# Crear un enlace de descarga
-enlace_descarga = f'<a href="graficos_reporte.zip" download>Descargar Reporte</a>'
-print(enlace_descarga)
+print("Archivo CSV creado con éxito.")
