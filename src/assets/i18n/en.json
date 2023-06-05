@@ -10,6 +10,7 @@
         "delete":"Delete",
         "error":"Error",
         "cancel":"Cancel",
+        "accept":"Accept",
         "warning":"Your cant!",
         "modify":"Modify",
         "add":"Add",
@@ -18,7 +19,8 @@
         "image":"Image",
         "enabled":"Enabled",
         "logout":"Log Out",
-        "price":"Price"
+        "price":"Price",
+        "warning2":"Warning"
     },
     "pages":{
         "home":"Home",
@@ -40,20 +42,24 @@
     "table":{
         "edit":"Edit table",
         "create":"Create table",
-        "needsAttention":"Needs attention"
+        "needsAttention":"Needs attention",
+        "warning":"Are you sure you want to remove this table?"
     },
     "waiter":{
         "bussy":"Bussy",
         "edit":"Edit waiter",
-        "create":"Create waiter"
+        "create":"Create waiter",
+        "not-active":"There are not enabled waiters",
+        "warning":"Are you sure you want to remove this waiter?"
     },
     "dishes":{
         "edit":"Edit dish",
         "create":"Create dish",
-        "warning":"¿Are you sure you want to remove this dish?"
+        "warning":"Are you sure you want to remove this dish?"
     },
     "account":{
-        "delete":"Delete account"
+        "delete":"Delete account",
+        "warning":"Are you sure to delete your account? (all your data will be lost)"
     },
     "commands":{
         "report":"Download json report"

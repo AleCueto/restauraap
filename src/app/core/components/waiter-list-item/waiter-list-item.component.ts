@@ -5,6 +5,8 @@ import { AlertController, ModalController } from '@ionic/angular';
 import { ImageService } from '../../services/image.service';
 import { UserService } from '../../services/user.service';
 import { WaitersDetailedComponent } from '../waiters-detailed/waiters-detailed.component';
+import { lastValueFrom } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-waiter-list-item',
@@ -23,6 +25,7 @@ export class WaiterListItemComponent implements OnInit {
     private modal:ModalController,
     public imageService:ImageService,
     private userService:UserService,
+    private translate:TranslateService,
     
 
   ) { }
@@ -52,18 +55,18 @@ export class WaiterListItemComponent implements OnInit {
   
   async onDeleteAlert(waiter:Waiter) {
     const alert = await this.alert.create({
-      header: 'Atención',
-      message: '¿Está seguro de que desear borrar este camarero?',
+      header: await lastValueFrom(this.translate.get('generic.warning2')),
+      message: await lastValueFrom(this.translate.get('waiter.warning')),
       buttons: [
         {
-          text: 'Cancelar',
+          text: await lastValueFrom(this.translate.get('generic.cancel')),
           role: 'cancel',
           handler: () => {
             console.log("Operacion cancelada");
           },
         },
         {
-          text: 'Borrar',
+          text: await lastValueFrom(this.translate.get('generic.delete')),
           role: 'confirm',
           handler: async () => {
             await this.deleteWaiter(waiter)

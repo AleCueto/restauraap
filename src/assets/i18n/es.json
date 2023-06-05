@@ -10,6 +10,7 @@
         "delete":"Borrar",
         "error":"Error",
         "cancel":"Cancelar",
+        "accept":"Aceptar",
         "warning":"¡No puedes!",
         "modify":"Modificar",
         "add":"Añadir",
@@ -18,7 +19,8 @@
         "image":"Imagen",
         "enabled":"Habilitado",
         "logout":"Cerrar sesión",
-        "price":"Precio"
+        "price":"Precio",
+        "warning2":"Atención"
     },
     "pages":{
         "home":"Inicio",
@@ -42,12 +44,15 @@
     "table":{
         "edit":"Editar mesa",
         "create":"Crear mesa",
-        "needsAttention":"Necesita atención"
+        "needsAttention":"Necesita atención",
+        "warning":"¿Está seguro de que desea borrar esta mesa?"
     },
     "waiter":{
         "bussy":"Ocupado",
         "edit":"Editar camarero",
-        "create":"Crear camarero"
+        "create":"Crear camarero",
+        "not-active":"No hay camareros disponibles",
+        "warning":"¿Está seguro de que desea borrar este camarero?"
     },
     "dishes":{
         "edit":"Editar plato",
@@ -55,7 +60,8 @@
         "warning":"¿Está seguro de que desea borrar este plato?"
     },
     "account":{
-        "delete":"Borrar cuenta"
+        "delete":"Borrar cuenta",
+        "warning":"¿Está seguro de que desea borrar su cuenta? (todos sus datos se perderán)"
     },
     "commands":{
         "report":"Descargar el reporte json"

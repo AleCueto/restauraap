@@ -7,6 +7,8 @@ import { UserService } from '../../services/user.service';
 import { TablesDetailedComponent } from '../tables-detailed/tables-detailed.component';
 import { Waiter } from '../../models/waiter.model';
 import { WaitersService } from '../../services/waiters.service';
+import { lastValueFrom } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-table-list-item',
@@ -29,7 +31,8 @@ export class TableListItemComponent implements OnInit {
     private modal: ModalController,
     public imageService: ImageService,
     private userService: UserService,
-    private waiterService: WaitersService
+    private waiterService: WaitersService,
+    private translate:TranslateService,
   ) {
 
     // this.waiter = firestore
@@ -87,18 +90,18 @@ export class TableListItemComponent implements OnInit {
 
   async onDeleteAlert(table: Table) {
     const alert = await this.alert.create({
-      header: 'Atención',
-      message: '¿Está seguro de que desear borrar este plato?',
+      header: await lastValueFrom(this.translate.get('generic.warning2')),
+      message: await lastValueFrom(this.translate.get('table.warning')),
       buttons: [
         {
-          text: 'Cancelar',
+          text: await lastValueFrom(this.translate.get('generic.cancel')),
           role: 'cancel',
           handler: () => {
             console.log("Operacion cancelada");
           },
         },
         {
-          text: 'Borrar',
+          text: await lastValueFrom(this.translate.get('generic.delete')),
           role: 'confirm',
           handler: async () => {
             await this.deleteTable(table)
@@ -225,11 +228,11 @@ export class TableListItemComponent implements OnInit {
   
   async onNoWaitersAlert() {
     const alert = await this.alert.create({
-      header: 'Atención',
-      message: 'No dispone de camareros activos.',
+      header: await lastValueFrom(this.translate.get('generic.warning2')),
+      message: await lastValueFrom(this.translate.get('waiter.not-active')),
       buttons: [
         {
-          text: 'Aceptar',
+          text: await lastValueFrom(this.translate.get('generic.accept')),
           role: 'cancel',
           handler: () => {
             console.log("Operacion cancelada");

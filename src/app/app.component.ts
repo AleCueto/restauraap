@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { UserService } from './core/services/user.service';
 import { Router, RouterOutlet } from '@angular/router';
 import { AlertController, IonRouterOutlet, MenuController } from '@ionic/angular';
+import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -56,18 +57,18 @@ export class AppComponent {
   
   async onDeleteAlert() {
     const alert = await this.alert.create({
-      header: 'Atención',
-      message: '¿Está seguro de que desea borrar su cuenta? (todos sus datos se perderán)',
+      header: await lastValueFrom(this.translate.get('generic.warning2')),
+      message: await lastValueFrom(this.translate.get('account.warning')),
       buttons: [
         {
-          text: 'Cancelar',
+          text: await lastValueFrom(this.translate.get('generic.cancel')),
           role: 'cancel',
           handler: () => {
             console.log("Operación cancelada");
           },
         },
         {
-          text: 'Borrar',
+          text: await lastValueFrom(this.translate.get('generic.delete')),
           role: 'confirm',
           handler: async () => {
             await this.deleteAccount();

@@ -6,6 +6,8 @@ import { DishesDetailedComponent } from '../dishes-detailed/dishes-detailed.comp
 import { ImageService } from '../../services/image.service';
 import { error } from 'console';
 import { UserService } from '../../services/user.service';
+import { lastValueFrom } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dish-list-item',
@@ -23,7 +25,8 @@ export class DishListItemComponent implements OnInit {
     private alert:AlertController,
     private modal:ModalController,
     public imageService:ImageService,
-    private userService:UserService
+    private userService:UserService,
+    private translate:TranslateService,
 
   ) { }
 
@@ -60,18 +63,18 @@ export class DishListItemComponent implements OnInit {
   
   async onDeleteAlert(dish:Dish) {
     const alert = await this.alert.create({
-      header: 'Atención',
-      message: '¿Está seguro de que desear borrar este plato?',
+      header: await lastValueFrom(this.translate.get('generic.warning2')),
+      message: await lastValueFrom(this.translate.get('dishes.warning')),
       buttons: [
         {
-          text: 'Cancelar',
+          text: await lastValueFrom(this.translate.get('generic.cancel')),
           role: 'cancel',
           handler: () => {
             console.log("Operacion cancelada");
           },
         },
         {
-          text: 'Borrar',
+          text: await lastValueFrom(this.translate.get('generic.delete')),
           role: 'confirm',
           handler: async () => {
             await this.deleteDish(dish)
