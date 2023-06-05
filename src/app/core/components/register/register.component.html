@@ -1,39 +1,22 @@
-<head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-
-<!-- <form [formGroup]="formRef" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
-  <ion-item>
-    <ion-label position="floating">
-      {{"generic.name" | translate}}
-    </ion-label>
-    <ion-input type="text" placeholder="Introduce tu correo" formControlName="email"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">
-      {{"generic.password" | translate}}
-    </ion-label>
-    <ion-input type="text" placeholder="Introduce tu contraseña" formControlName="password"></ion-input>
-  </ion-item>
-</form>
-<ion-button [disabled]="!formRef.valid" (click)="onSubmit()">Register</ion-button> -->
-
-
 <ion-content>
-  <form [formGroup]="formRef" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
-    <ion-item lines="full">
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" placeholder="Introduce tu correo" formControlName="email"></ion-input>
-    </ion-item>
-    <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" placeholder="Introduce tu contraseña" formControlName="password"></ion-input>
-    </ion-item>
-    <ion-row>
-      <ion-col>
-        <ion-button [disabled]="!formRef.valid" (click)="onSubmit()" expand="block">Register</ion-button>
-        <ion-button [disabled]="!formRef.valid" (click)="goLogin()" expand="block">Login</ion-button>
-      </ion-col>
-    </ion-row>
-  </form>
+  <div class="container">
+    <form [formGroup]="formRef" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()" class="form-register">
+      <ion-item lines="full">
+        <ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-row class="ion-margin-top">
+        <ion-col>
+          <ion-button [disabled]="!formRef.valid" (click)="onSubmit()" expand="block">Register</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-margin-top">
+        <ion-col class="ion-text-center">
+          <a class="forgot-password" href="#">Already have an account? Log in!</a>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
 </ion-content>

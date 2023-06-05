@@ -1,0 +1,62 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form-register {
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 600px) {
+    .form-register {
+      width: 100%;
+      max-width: none;
+      padding: 16px;
+    }
+  }
+  
+  ion-content {
+    --ion-background-color: transparent;
+  }
+  
+  ion-input {
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  ion-button {
+    margin-top: 16px;
+    --ion-background-color: #333;
+    --ion-text-color: #fff;
+    --ion-padding-start: 16px;
+    --ion-padding-end: 16px;
+    --ion-padding-top: 10px;
+    --ion-padding-bottom: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  ion-button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  ion-button.expand {
+    width: 100%;
+  }
+  
+  .ion-margin-top {
+    margin-top: 16px;
+  }
+  
