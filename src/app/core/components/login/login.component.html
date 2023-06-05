@@ -7,6 +7,8 @@
       <ion-item lines="full">
         <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
       </ion-item>
+      <!-- Agregar mensaje de error -->
+      <div *ngIf="loginError" class="error-message">{{ loginError }}</div>
       <ion-row class="ion-margin-top">
         <ion-col>
           <ion-button [disabled]="!formLogin.valid" (click)="onSubmit()" expand="block">Login</ion-button>
@@ -14,9 +16,17 @@
       </ion-row>
       <ion-row class="ion-margin-top">
         <ion-col class="ion-text-center">
-          <a class="forgot-password" href="/register">Do not have an account?  Register!</a>
+          <a class="forgot-password" href="/register">Do not have an account? Register!</a>
         </ion-col>
       </ion-row>
     </form>
   </div>
 </ion-content>
+
+<style>
+  .error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+</style>
