@@ -1,3 +1,44 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<ion-content>
+  <div class="container">
+    <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()" class="form-login">
+      <ion-item lines="full">
+        <ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+      </ion-item>
+      <!-- Agregar mensaje de error -->
+      <div *ngIf="loginError" class="error-message">{{ loginError }}</div>
+      <ion-row class="ion-margin-top">
+        <ion-col>
+          <ion-button [disabled]="!formLogin.valid" (click)="onSubmit()" expand="block">Login</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-margin-top">
+        <ion-col>
+          <ion-button expand="block" class="ion-google-button" color="google" (click)="onClick()">
+            <ion-icon slot="start" name="logo-google"></ion-icon>
+            Login with Google
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-margin-top">
+        <ion-col class="ion-text-center">
+          <a class="forgot-password" href="/register">Do not have an account? Register!</a>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+</ion-content>
+
+<style>
+  .error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+</style>
 <ion-content>
   <div class="container">
     <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()" class="form-login">
@@ -17,6 +58,14 @@
       <ion-row class="ion-margin-top">
         <ion-col class="ion-text-center">
           <a class="forgot-password" href="/register">Do not have an account? Register!</a>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-margin-top">
+        <ion-col>
+          <ion-button expand="block" color="google" (click)="onClick()">
+            <ion-icon slot="start" name="logo-google"></ion-icon>
+            Login with Google
+          </ion-button>
         </ion-col>
       </ion-row>
     </form>

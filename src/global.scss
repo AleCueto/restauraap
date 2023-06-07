@@ -25,3 +25,34 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+.google-btn {
+    --background: #4285F4;
+    --color: white;
+    --border-radius: 5px;
+    --border-width: 0;
+    --padding-start: 20px;
+    --padding-end: 20px;
+    --ion-button-transition: none;
+  }
+  
+  .google-btn::part(native) {
+    border-radius: var(--border-radius);
+  }
+  
+  .google-btn::part(text) {
+    color: var(--color);
+  }
+  
+  .google-btn::part(icon) {
+    color: var(--color);
+    // margin-end: 10px;
+  }
+  
+  .google-btn:hover {
+    --background: #3669c9;
+  }
+  
+  .google-btn:active {
+    --background: #2a548c;
+  }
+  

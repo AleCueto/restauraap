@@ -60,3 +60,25 @@
     margin-top: 16px;
   }
   
+  .google-button {
+    --background: #db4437;
+    --color: #fff;
+    --border-radius: 5px;
+    --padding-start: 12px;
+    --padding-end: 12px;
+    --box-shadow: none;
+  }
+  
+  .ion-google-button {
+    background-color: #4285F4;
+    color: #ffffff;
+    border: none;
+  }
+  
+  .ion-google-button:hover {
+    background-color: #3367D6;
+  }
+  
+  .ion-google-button:active {
+    background-color: #2A56C6;
+  }

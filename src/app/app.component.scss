@@ -123,7 +123,17 @@ ion-item.selected {
   src: url('/assets/fonts/fredoka.woff2');
 }
 
+@font-face{
+  font-family: Gingerline;
+  src: url('/assets/fonts/Gingerline.otf');
+}
+
 *{
-  font-family: Fredoka !important;
+  font-family: Gingerline !important;
+  font-size: 30px !important;
   // background-color: #f6b3e1 !important;
+}
+
+header{
+  font-family: Gingerline !important;
 }

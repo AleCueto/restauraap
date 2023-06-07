@@ -57,17 +57,16 @@ export class UserService {
     }
   }
 
-// Method to handle account deletion
-deleteAccount() {
-  this.auth.currentUser?.delete()
-  
-    .then(() => {
-      // Account successfully deleted.
-    })
-    .catch((error) => {
-      // An error occurred while deleting the account.
-      console.error(error);
-    });
-}
+  // Method to handle account deletion
+  deleteAccount() {
+    this.auth.currentUser?.delete()
+      .then(() => {
+        // Account successfully deleted.
+      })
+      .catch((error) => {
+        // An error occurred while deleting the account.
+        console.error(error);
+      });
+  }
 
 }
