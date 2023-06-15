@@ -72,7 +72,7 @@ Además contaremos con un listado de comandas creadas en la terminal que usa la 
  ### Histórico de cambios
 
 Para acceder al histórico de cambios de la aplicación haga
-click [aqui](https://github.com/DavidAntunezPerez/RestaurAPP_Android/commits)
+click [aqui](https://github.com/AleCueto/restauraap/commits/)
 ![cambios](https://github.com/AleCueto/imagenes/blob/master/img.PNG)
 
 
