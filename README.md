@@ -114,3 +114,15 @@ click [aqui](https://github.com/AleCueto/restauraap/commits/)
 
 ## Video de Checkpoint:
 [![Alt text](https://img.youtube.com/vi/qk3atJxrR8Q/0.jpg)](https://youtu.be/qk3atJxrR8Q)
+
+## Bibliografía:
+Estos son algunos de los sitios que me han ayudado a hacer la aplicación. <br />
+[Stack overflow](https://stackoverflow.com/) <br />
+[Chat GPT](https://chat.openai.com) <br />
+[Ionic Framework](https://ionicframework.com/) <br />
+[RxJs documentation](https://rxjs.dev/) <br />
+[Angular documentation](https://angular.io/docs) <br />
+[Firebase documentation](https://firebase.google.com/docs) <br />
+[Pandas documentation](https://pandas.pydata.org/docs/) <br />
+[Garaje de ideas (Youtube)](https://www.youtube.com/@Garajedeideas) <br />
+[Tareando](https://github.com/juanarrow/tareando) <br />
