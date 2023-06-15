@@ -56,10 +56,14 @@ La aplicación consta de seis páginas, las cuales vamos a ir desglosando y expl
 ### Home:
 Esta sección es la primera que veremos al iniciar sesión. Incluye unos botones para el fácil acceso a cualquiera de los apartados de la aplicación.<br/>
 Simplemente haciendo click podremos movernos a la sección que deseemos. <br/>
+![home](https://github.com/AleCueto/imagenes/blob/master/restaurapp/home.PNG)
+
 ### Platos:
 Aquí tendremos un listado de los platos de nuestra carta. Son los que verá el camarero y podrá añadir a nuestra comanda. <br />
 Permite, como el resto de modelos, la creación, listado, edición y borrado.
-Contamos con un precio, un titulo y una imagen para cada plato.
+Contamos con un precio, un titulo y una imagen para cada plato. <br />
+![dishes](https://github.com/AleCueto/imagenes/blob/master/restaurapp/dishes.PNG)
+
 ### Mesas:
 Las mesas aparecerán listadas con su numero en la parte superior. <br />
 Podemos elegir manualmente el numero de nuestra mesa para hacer la aplicación lo más flexible posible.<br />
@@ -74,11 +78,15 @@ Hace una lista de los camareros que no están ocupados (no están atendiendo a n
 En caso de que no haya camareros desocupados mira cual de los camareros está atendiendo menos mesas (cada camarero tiene un atributo de mesas atendiendo). <br />
 Si hay más de un camarero con el minimo de mesas atendiendose, escoge entre estos de manera aleatoria (para evitar como he mencionado que uno trabaje siempre antes) y lo asigna a la mesa. <br />
 <br /> Este sistema automático evita la incomodidad del cliente a ser atendido antes de decidir y reduce el trabajo de los camareros sabiendo cuando deben atender una mesa. <br />
-En el futuro de la aplicación la versión móvil de restaruapp notificará cuando un camarero es requerido y el botón de asignación automática estará en cada mesa.
+En el futuro de la aplicación la versión móvil de restaruapp notificará cuando un camarero es requerido y el botón de asignación automática estará en cada mesa.<br />
+![tables](https://github.com/AleCueto/imagenes/blob/master/restaurapp/tables.PNG)
+
 ### Camareros:
 Aquí podemos ver un listado de camareros. Los que estén fuera de la plantilla por cuestiones vacacionales, de baja por cualquier razón, suspensión del puesto... aparecerán en gris. <br />
 También se puede observar cual de ellos está ocupado gracias a la casilla que hay debajo del apellido. Esa casilla se activa y desactiva automáticamente si el camarero está o no atendiendo alguna mesa.<br />
 Como todos los modelos, el camarero se crea, lista edita y borra.
+![waiters](https://github.com/AleCueto/imagenes/blob/master/restaurapp/waiters.PNG)
+
 ### Commands:
 Las comandas se listan en esta pantalla. Son el único modelo que no se modifica desde esta página, porque está orientada a usarse por el dueño del local y las comandas las redactan los camareros desde la app móvil.<br />
 Se pueden ver aquí los platos que hay asignados a cada comanda, además contamos con un título y una pequeña descripción que pueden servir para la mejor monitorización de las mismas. <br />
@@ -87,8 +95,10 @@ Ahora vamos a pasar a la explicación de generación de informes y archivos CSV:
 Si queremos generar un CSV de nuestras comandas, lo primero será dar click en el botón "DESCARGAR REPORTE JSON" que hay al fondo de la página comandas. Este nos descargará un archivo .json con toda la información necesaria. <br />
 Después hemos de copiar esos datos en el fichero "datos.json" que hay en la carpeta "[python](https://github.com/AleCueto/restauraap/tree/master/src/app/core/python)". <br /> Este archivo es el que se leerá por los scripts. <br />
 Tras esto, debemos ejecutar los archivos "[commands.py](https://github.com/AleCueto/restauraap/blob/master/src/app/core/python/commands.py)" y "[dishes.py](https://github.com/AleCueto/restauraap/blob/master/src/app/core/python/dishes.py)". <br />
-Tras esto se habrán generado dos archivos llamados commands.csv y dishes.csv.
-Simplemente los pasamos al informe de power BI y este nos dará información muy interesante.
+Tras esto se habrán generado dos archivos llamados commands.csv y dishes.csv. <br />
+Simplemente los pasamos al informe de power BI y este nos dará información muy interesante. <br />
+![comands](https://github.com/AleCueto/imagenes/blob/master/restaurapp/commands.PNG)
+
 ### Sobre mí:
 Este archivo cuenta con información personal del desarrollador. Así como sus otros trabajos.
 
