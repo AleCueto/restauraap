@@ -90,14 +90,12 @@ Como todos los modelos, el camarero se crea, lista edita y borra.
 ### Commands:
 Las comandas se listan en esta pantalla. Son el único modelo que no se modifica desde esta página, porque está orientada a usarse por el dueño del local y las comandas las redactan los camareros desde la app móvil.<br />
 Se pueden ver aquí los platos que hay asignados a cada comanda, además contamos con un título y una pequeña descripción que pueden servir para la mejor monitorización de las mismas. <br />
-La aplicación tiene un sistema de generación de hoja de calculo (archivo csv) que podemos pasar a una plantilla de informes y tener información detallada de cada comanda. <br />
-Ahora vamos a pasar a la explicación de generación de informes y archivos CSV:<br />
-Si queremos generar un CSV de nuestras comandas, lo primero será dar click en el botón "DESCARGAR REPORTE JSON" que hay al fondo de la página comandas. Este nos descargará un archivo .json con toda la información necesaria. <br />
-Después hemos de copiar esos datos en el fichero "datos.json" que hay en la carpeta "[python](https://github.com/AleCueto/restauraap/tree/master/src/app/core/python)". <br /> Este archivo es el que se leerá por los scripts. <br />
 Tras esto, debemos ejecutar los archivos "[commands.py](https://github.com/AleCueto/restauraap/blob/master/src/app/core/python/commands.py)" y "[dishes.py](https://github.com/AleCueto/restauraap/blob/master/src/app/core/python/dishes.py)". <br />
 Tras esto se habrán generado dos archivos llamados commands.csv y dishes.csv. <br />
 Simplemente los pasamos al informe de power BI y este nos dará información muy interesante. <br />
 ![comands](https://github.com/AleCueto/imagenes/blob/master/restaurapp/commands.PNG)  <br />
+
+### Reporte:
 ![report-1](https://github.com/AleCueto/imagenes/blob/master/restaurapp/report-1.PNG)  <br />
 ![report-2](https://github.com/AleCueto/imagenes/blob/master/restaurapp/report-2.PNG)
 
