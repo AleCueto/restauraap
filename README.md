@@ -3,7 +3,10 @@
  ## Este es el repositorio de la versión web de Restaura App.
 
 ## Índice: 
-1. [Descripción](###descripcion)
+1. [Descripción](#descripción)
+2. [Tecnologías y dependencias](#tecnologías-dependencias)
+3. [Manual de instalación](#manual-de-instalación)
+4. [Manual de uso](#uso-y-secciones)
 
 
 ### Descripción:
