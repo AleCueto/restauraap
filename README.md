@@ -11,7 +11,8 @@
 
 
 ### Descripción:
-La versión web de restaurapp es una aplicación orientada a la gestión genérica de restaurantes. Permite mantener un registro de los platos de tu carta, las mesas de las que dispone tu local y los camareros de tu plantilla. Además muestra las comandas anotadas desde la <a href="https://github.com/DavidAntunezPerez/RestaurAPP_Android"> aplicación movil </a> que lleva cada uno de los camareros en su dispositivo de trabajo. 
+La versión web de restaurapp es una aplicación orientada a la gestión genérica de restaurantes. Permite mantener un registro de los platos de tu carta, las mesas de las que dispone tu local y los camareros de tu plantilla. Además muestra las comandas anotadas desde la <a href="https://github.com/DavidAntunezPerez/RestaurAPP_Android"> aplicación movil </a> que lleva cada uno de los camareros en su dispositivo de trabajo.  <br/>
+Para abrir la aplicacion web debes dirigirte a la siguiente dirección: https://restauraap-69c20.web.app <br/>
 
 Restaurapp destaca por su funcionalidad de asignación automática de camareros a mesas:
 Cuando un cliente se sienta en una mesa de un restaurante, generalmente el camarero ha de estar atento a cuando debe tomar nota, a veces siendo incómodo para el cliente que puede no haber decidido que desea tomar. Restaurapp propone una solución sencilla a esto. Contamos con un método que asigna directamente un camarero a una mesa, la asignación es inteligente, mirará primero si el camarero está en la plantilla, luego que camareros están ocupados, cuando todos lo estén decidirá en base a cual de los camareros cuenta con menos trabajo y en caso de que todos tengan el mismo trabajo, la asignación será aleatoria para que no haya siempre un camarero atareado antes que el resto. 
