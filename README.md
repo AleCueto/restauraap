@@ -17,13 +17,13 @@ Cuando un cliente se sienta en una mesa de un restaurante, generalmente el camar
 Ahora mismo está funcionalidad se activa dándole al botón de asignación automática de la mesa, pero en el futuro esa llamada se podría hacer desde un botón físico en cada una de las mesas, para que la toma de comandas se haga lo antes posible ahorrando tiempo y trabajo a los camareros y evitando la incomodidad de el cliente.
 
 ### Dependencias:
-Antes de arrancar la aplicación en local debes disponer de: <br/>
-La capacidad de ejecutar un programa desarrollado en ionic/angular. <br/>
-Espacio en tu disco para almacenar los archivos. <br/>
-Conexión a internet para acceder a los datos almacenados en firebase. <br/>
-Python para poder generar los archivos .csv que se usarán en los reportes. <br/>
-Algún programa de hojas de cálculos si deseas visualizar el contenido de los archivos .csv <br/>
-Power BI para poder ver el reporte correctaente.<br/>
+-Antes de arrancar la aplicación en local debes disponer de: <br/>
+-La capacidad de ejecutar un programa desarrollado en ionic/angular. <br/>
+-Espacio en tu disco para almacenar los archivos. <br/>
+-Conexión a internet para acceder a los datos almacenados en firebase. <br/>
+-Python para poder generar los archivos .csv que se usarán en los reportes. <br/>
+-Algún programa de hojas de cálculos si deseas visualizar el contenido de los archivos .csv <br/>
+-Power BI para poder ver el reporte correctaente.<br/>
 
  ### Tecnologías:
  Estas son las tecnologías utilizadas en la aplicacion: <br/>
