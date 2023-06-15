@@ -97,7 +97,9 @@ Después hemos de copiar esos datos en el fichero "datos.json" que hay en la car
 Tras esto, debemos ejecutar los archivos "[commands.py](https://github.com/AleCueto/restauraap/blob/master/src/app/core/python/commands.py)" y "[dishes.py](https://github.com/AleCueto/restauraap/blob/master/src/app/core/python/dishes.py)". <br />
 Tras esto se habrán generado dos archivos llamados commands.csv y dishes.csv. <br />
 Simplemente los pasamos al informe de power BI y este nos dará información muy interesante. <br />
-![comands](https://github.com/AleCueto/imagenes/blob/master/restaurapp/commands.PNG)
+![comands](https://github.com/AleCueto/imagenes/blob/master/restaurapp/commands.PNG)  <br />
+![report-1](https://github.com/AleCueto/imagenes/blob/master/restaurapp/report-1.PNG)  <br />
+![report-2](https://github.com/AleCueto/imagenes/blob/master/restaurapp/report-2.PNG)
 
 ### Sobre mí:
 Este archivo cuenta con información personal del desarrollador. Así como sus otros trabajos.
