@@ -89,21 +89,8 @@ Después hemos de copiar esos datos en el fichero "datos.json" que hay en la car
 Tras esto, debemos ejecutar los archivos "[commands.py](https://github.com/AleCueto/restauraap/blob/master/src/app/core/python/commands.py)" y "[dishes.py](https://github.com/AleCueto/restauraap/blob/master/src/app/core/python/dishes.py)". <br />
 Tras esto se habrán generado dos archivos llamados commands.csv y dishes.csv.
 Simplemente los pasamos al informe de power BI y este nos dará información muy interesante.
-
- 
-Además contaremos con un listado de comandas creadas en la terminal que usa la versión de android de esta aplicación.
- 
- Las páginas o secciones que tiene la página son:
- 
- Platos: En esta página podremos subir los platos de nuestra carta, además podemos editarlos y borrarlos.
- 
- Mesas: Es la página en la que tendremos las casillas en las que podremos crear editar borrar y listar platos.
- 
- Camareros: Es la sección en la que tendremos las casillas en las que podremos crear editar borrar y listar platos.
- 
- Comandas: En esta parte tendremos un listado de las comandas del usuario.
- 
- Sobre mí: En dicha página hay información sobre el desarrollador de la aplicación.
+### Sobre mí:
+Este archivo cuenta con información personal del desarrollador. Así como sus otros trabajos.
 
  ### Histórico de cambios
 
