@@ -92,7 +92,7 @@ Simplemente los pasamos al informe de power BI y este nos dará información muy
 ### Sobre mí:
 Este archivo cuenta con información personal del desarrollador. Así como sus otros trabajos.
 
- ### Histórico de cambios
+## Histórico de cambios
 
 Para acceder al histórico de cambios de la aplicación haga
 click [aqui](https://github.com/AleCueto/restauraap/commits/)
