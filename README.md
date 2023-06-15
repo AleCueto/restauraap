@@ -7,6 +7,7 @@
 2. [Tecnologías](#tecnologías)
 3. [Manual de instalación](#manual-de-instalación)
 4. [Manual de uso](#uso-y-secciones)
+5. [Dependencias](#dependencias)
 
 
 ### Descripción:
