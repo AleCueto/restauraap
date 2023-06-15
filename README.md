@@ -24,6 +24,20 @@ Ahora mismo está funcionalidad se activa dándole al botón de asignación auto
  -Python
  -Pandas
 
+- [Canva](https://www.canva.com/): Como herramienta de diseño de imágenes y el propio logo.
+- [Ionicons](https://ionic.io/ionicons): Para el uso de iconos en la aplicación.
+- [Trello](https://trello.com): Utilizado para la gestión de tareas.
+- [Figma](https://www.figma.com/): Utilizado para desarrollar el [Anteproyecto](https://github.com/DavidAntunezPerez/restaurapp#anteproyecto).
+- [Google Firebase](https://firebase.google.com/): Utilizado como servicio externo para consumir datos y como base de datos con Firestore, para almacenar imágenes con Storage, y como herramienta de autenticación de usuarios con Authentication.
+- [PowerBI](https://powerbi.microsoft.com/es-es/): Para cumplir con los [requisitos del módulo desarrollo de interfaces](https://github.com/IESCampanillas/proyectos-dam-2023/wiki/Desarrollo-de-Interfaces) y con los [requisitos del módulo de sistemas de gestión empresarial](https://github.com/IESCampanillas/proyectos-dam-2023/wiki/Sistemas-de-Gesti%C3%B3n-Empresarial)
+- [Ionic Framework](https://ionicframework.com/): Usando los componentes propios para el diseño de la web.
+- [Angular](https://angular.io/) Como framework usado para el desarrollo de la aplicación.
+- [Python](https://www.python.org/): Utilizado para la creación y ejecución del script encargado de la generación de archivos CSV. Se han utilizado la librería de [Pandas](https://pandas.pydata.org/) para la modificación de los datos.
+- [Visual studio code](https://code.visualstudio.com/):Como entorno de desarrollo integrado para el desarrollo de la aplicación.
+- [DaFont](https://www.dafont.com/): Para la descarga de fuentes de texto usadas en la aplicación.
+- [GitHub](https://github.com/): Para gestionar el proyecto, controlar versiones de código y almacenar el código del proyecto en la nube.
+- [Git](https://git-scm.com/): Usado como  sistema de control de versiones en el proyecto.
+
  ## Manual de instalación:
 -Lo primero que debes hacer es dirigirte al <a href="https://github.com/AleCueto/restauraap">repositorio</a>.
 -Después damos click al botón verde y en “<a href="https://github.com/AleCueto/restauraap/archive/refs/heads/master.zip">Descargar ZIP</a>”.
