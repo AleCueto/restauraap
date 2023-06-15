@@ -52,11 +52,37 @@ Aunque para usar la aplicación, solo necesitas ir al siguiente enlace:
 https://restauraap-69c20.web.app/login
  
  ## Uso y secciones:
- El objetivo de la aplicación es hacer la gestión de un restaurante. 
- En esta aplicación tendremos CRUDS para los siguientes modelos:
- -Platos
- -Mesas
- -Camareros
+La aplicación consta de seis páginas, las cuales vamos a ir desglosando y explicando en esta sección.
+### Home:
+Esta sección es la primera que veremos al iniciar sesión. Incluye unos botones para el fácil acceso a cualquiera de los apartados de la aplicación.<br/>
+Simplemente haciendo click podremos movernos a la sección que deseemos. <br/>
+### Platos:
+Aquí tendremos un listado de los platos de nuestra carta. Son los que verá el camarero y podrá añadir a nuestra comanda. <br />
+Permite, como el resto de modelos, la creación, listado, edición y borrado.
+Contamos con un precio, un titulo y una imagen para cada plato.
+### Mesas:
+Las mesas aparecerán listadas con su numero en la parte superior. <br />
+Podemos elegir manualmente el numero de nuestra mesa para hacer la aplicación lo más flexible posible.<br />
+Debajo de la ilustración de cada mesa contamos con un avatar que mostrará el camarero que esté atendiéndola y el nombre del mismo. <br />
+Además podremos incluir una pequeña linea de texto con información adicional a nuestra mesa. Por ejemplo, si está reservada o hay que moverla a cierta hora del dia debido al sol. <br />
+La mesa tiene botones de edición y como el resto de modelos permite su creación, edición, listado y borrado. <br />
+El punto más interesante de las mesas es el botón que se encuentra arriba a la derecha de cada una. Este permite una asignación automática de camareros a la mesa. <br />
+La idea es que en la implementación real de la aplicación este botón esté en cada mesa del restaurante permitiendo que los comensales lo activen. <br />
+Cuando se pulsa el botón se llama a una funcion que hace los siguiente: <br />
+Mira la lista de camareros disponibles en nuestro restaurante (los que tienen el atributo "enabled" activado, es decir, están en nuestra plantilla y no de vacaciones, baja....) <br />
+Hace una lista de los camareros que no están ocupados (no están atendiendo a ninguna mesa) y en caso de que haya uno o más lo escoge y asigna aleatoriamente, evitanto así que siempre trabaje el mismo camarero antes que los demás. <br />
+En caso de que no haya camareros desocupados mira cual de los camareros está atendiendo menos mesas (cada camarero tiene un atributo de mesas atendiendo). <br />
+Si hay más de un camarero con el minimo de mesas atendiendose, escoge entre estos de manera aleatoria (para evitar como he mencionado que uno trabaje siempre antes) y lo asigna a la mesa. <br />
+<br /> Este sistema automático evita la incomodidad del cliente a ser atendido antes de decidir y reduce el trabajo de los camareros sabiendo cuando deben atender una mesa. <br />
+En el futuro de la aplicación la versión móvil de restaruapp notificará cuando un camarero es requerido y el botón de asignación automática estará en cada mesa.
+### Camareros:
+Aquí podemos ver un listado de camareros. Los que estén fuera de la plantilla por cuestiones vacacionales, de baja por cualquier razón, suspensión del puesto... aparecerán en gris. <br />
+También se puede observar cual de ellos está ocupado gracias a la casilla que hay debajo del apellido. Esa casilla se activa y desactiva automáticamente si el camarero está o no atendiendo alguna mesa.<br />
+Como todos los modelos, el camarero se crea, lista edita y borra.
+### Commands:
+Las comandas se listan en esta pantalla. Son el único modelo que no se modifica desde esta página, porque está orientada a usarse por el dueño del local y las comandas las redactan los camareros desde la app móvil.<br />
+Se puede ver aquí el numero de platos que hay asignados a una comanda
+
  
 Además contaremos con un listado de comandas creadas en la terminal que usa la versión de android de esta aplicación.
  
