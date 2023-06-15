@@ -8,6 +8,7 @@
 3. [Manual de instalación](#manual-de-instalación)
 4. [Manual de uso](#uso-y-secciones)
 5. [Dependencias](#dependencias)
+6. [Bibliografía](#bibliografía)
 
 
 ### Descripción:
