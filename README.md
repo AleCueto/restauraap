@@ -42,7 +42,7 @@ Ahora mismo está funcionalidad se activa dándole al botón de asignación auto
 - [Git](https://git-scm.com/): Usado como  sistema de control de versiones en el proyecto.
 
  ## Manual de instalación:
--Lo primero que debes hacer es dirigirte al <a href="https://github.com/AleCueto/restauraap">repositorio</a>. <br/>
+-Lo primero que debes hacer es revisar las dependencias del proyecto y dirigirte al <a href="https://github.com/AleCueto/restauraap">repositorio</a>. <br/>
 -Después damos click al botón verde y en “<a href="https://github.com/AleCueto/restauraap/archive/refs/heads/master.zip">Descargar ZIP</a>”. <br/>
 -Extraemos los archivos y abrimos la carpeta con el código usando visual studio code. <br/>
 -En la terminal escribimos “ionic serve”. Esto lanzará la aplicación en nuestro navegador. <br/>
