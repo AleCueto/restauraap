@@ -3,7 +3,7 @@
  ## Este es el repositorio de la versión web de Restaura App.
 
 ## Índice: 
-1. [Descripción](#descripcion)
+1. [Descripción](###descripcion)
 
 
 ### Descripción:
