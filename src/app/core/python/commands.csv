@@ -1,3 +1,11 @@
-description,totalPrice,title,idTable,id
-COSITAS,"12,25",platos,BjMANYlUMUhfBoFnpD9U,hxneTvLebvP4gJkxHL7o
-Esta es la descripcion de la cuetocomanda,"28,5",Cueto comanda,TD3mdnfQnMVR559W7uvP,m8D71ldGnmYrSOZaHPqU
+title,totalPrice,idTable,description,id
+Pedido urgente,"11,3",1mgqyuDBsJInTbyT5VT8,Los clientes tienen prisa por temas personales,1s0Iri09rfH1tZ6HIV7L
+Chico alto mesa 1,"33,5",1mgqyuDBsJInTbyT5VT8,Limpiar mesa,Fot2G4YqEOPsxm9V2g7N
+Para Juan Carlos,"35,95",1mgqyuDBsJInTbyT5VT8,Entregar a Juan Carlos para la mesa 1,LocxQ1KcgoXFz3CBSuov
+Para la chica rubia,"13,3",iSwWRcBJVupU2gwSJSY7,Preguntar por bebidas,MXDkCaoPrAuvbxWPHGGh
+Solo postre,3,hScC88jJCczz1no6Le3y,El cliente tiene prisa,QFE7xn7TsM0sxmndUZgO
+Crema catalana y rissoto,"8,3",1mgqyuDBsJInTbyT5VT8,Traer ambas recien hechas,YxjBRAwwuUsIKbcjbL3J
+Fabada asturiana,"13,5",iSwWRcBJVupU2gwSJSY7,Para la mesa cerca de la puerta,fxBWQNJ6fEgPVG5aSlep
+Familia ,"43,3",1mgqyuDBsJInTbyT5VT8,Mover mesas despues de entregar este pedido,gfr7V9wFI5pRizKfMePP
+Familia mesa grande,"22,8",hScC88jJCczz1no6Le3y,Traer todos los platos a la vez,pK2fagqZXXmQjo5AyzhF
+Pedido importante,"29,25",iSwWRcBJVupU2gwSJSY7,Inspector de comida,zSjSwtv1fXnWP7Aweb5q

@@ -15,27 +15,25 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class WaiterListItemComponent implements OnInit {
 
-  @Input() waiterInput:Waiter | undefined;
+  @Input() waiterInput: Waiter | undefined;
 
-  imageUrl:string = ""
+  imageUrl: string = ""
 
   constructor(
-    private waiterService:WaitersService,
-    private alert:AlertController,
-    private modal:ModalController,
-    public imageService:ImageService,
-    private userService:UserService,
-    private translate:TranslateService,
-    
-
+    private waiterService: WaitersService,
+    private alert: AlertController,
+    private modal: ModalController,
+    public imageService: ImageService,
+    private userService: UserService,
+    private translate: TranslateService
   ) { }
 
   ngOnInit() {
-    if(this.waiterInput){
-      // console.log(this.imageService.getImageUrlByName(this.dishInput?.image))
-      console.log(this.waiterInput)
+    if (this.waiterInput) {
+      console.log(this.waiterInput);
     }
 
+    // Get the image URL of the waiter
     this.imageService.getImageUrlByName(this.waiterInput!.picture).subscribe(
       url => {
         console.log(url);
@@ -43,17 +41,21 @@ export class WaiterListItemComponent implements OnInit {
       },
       error => console.log(error)
     );
-
   }
 
-
-  async deleteWaiter(waiter:Waiter){
-    // console.log("rfwe");
+  /**
+   * Deletes a waiter from the list.
+   * @param waiter The waiter to be deleted.
+   */
+  async deleteWaiter(waiter: Waiter) {
     await this.waiterService.deleteWaiter(waiter);
   }
 
-  
-  async onDeleteAlert(waiter:Waiter) {
+  /**
+   * Displays the delete alert when deleting a waiter.
+   * @param waiter The waiter to be deleted.
+   */
+  async onDeleteAlert(waiter: Waiter) {
     const alert = await this.alert.create({
       header: await lastValueFrom(this.translate.get('generic.warning2')),
       message: await lastValueFrom(this.translate.get('waiter.warning')),
@@ -62,14 +64,14 @@ export class WaiterListItemComponent implements OnInit {
           text: await lastValueFrom(this.translate.get('generic.cancel')),
           role: 'cancel',
           handler: () => {
-            console.log("Operacion cancelada");
+            console.log("Operation canceled");
           },
         },
         {
           text: await lastValueFrom(this.translate.get('generic.delete')),
           role: 'confirm',
           handler: async () => {
-            await this.deleteWaiter(waiter)
+            await this.deleteWaiter(waiter);
           },
         },
       ],
@@ -80,6 +82,10 @@ export class WaiterListItemComponent implements OnInit {
     const { role } = await alert.onDidDismiss();
   }
 
+  /**
+   * Presents the waiter form modal for adding or editing a waiter.
+   * @param waiter The waiter object for editing, or null for adding a new waiter.
+   */
   async presentWaiterForm(waiter: Waiter | null) {
     const modal = await this.modal.create({
       component: WaitersDetailedComponent,
@@ -100,20 +106,28 @@ export class WaiterListItemComponent implements OnInit {
             this.waiterService.editWaiter(result.data.waiter);
             break;
           default:
+            // Do nothing
         }
       }
     });
   }
 
+/**
+ * Opens the waiter form modal for editing a waiter.
+ * @param waiter The waiter to be edited.
+ */
+onEditWaiter(waiter: Waiter) {
+  this.presentWaiterForm(waiter);
+}
 
-  onEditWaiter(waiter:Waiter){
-    this.presentWaiterForm(waiter);
-  }
+/**
+ * Toggles the busy status of the waiter.
+ */
+changeBussy() {
+  const waiter = this.waiterInput;
+  waiter!.isBusy = !waiter?.isBusy;
+  this.waiterService.editWaiter(waiter!);
+}
 
-  changeBussy(){
-    const waiter = this.waiterInput
-    waiter!.isBusy = !waiter?.isBusy
-    this.waiterService.editWaiter(waiter!)
-  }
 
 }

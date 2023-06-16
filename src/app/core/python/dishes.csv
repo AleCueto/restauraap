@@ -1,6 +1,30 @@
-command,description,id,name,price
-platos,COSITAS,24AVwMroezilsxunKAOP,Salad,4
-platos,COSITAS,7rf8sGlsUDpSffSXLBen,Kiwi,"12,25"
-Cueto comanda,Esta es la descripcion de la cuetocomanda,24AVwMroezilsxunKAOP,Salad,4
-Cueto comanda,Esta es la descripcion de la cuetocomanda,7rf8sGlsUDpSffSXLBen,Kiwi,"12,25"
-Cueto comanda,Esta es la descripcion de la cuetocomanda,7rf8sGlsUDpSffSXLBen,Kiwi,"12,25"
+command,description,name,price,id
+Pedido urgente,Los clientes tienen prisa por temas personales,Risotto,4,a8nNggxHZXRTjmSj9p0V
+Pedido urgente,Los clientes tienen prisa por temas personales,Crema catalana,"4,3",vKxDbk4hqJW7nKWegW53
+Pedido urgente,Los clientes tienen prisa por temas personales,Flan,3,RKX8P9G50td0B3SlruBw
+Chico alto mesa 1,Limpiar mesa,Tortilla de patatas,"9,5",4D49aV5O2yBEwUslGkly
+Chico alto mesa 1,Limpiar mesa,Lentejas,6,Yl37ZBRIMw4QMDcxcmxN
+Chico alto mesa 1,Limpiar mesa,Flan,3,RKX8P9G50td0B3SlruBw
+Chico alto mesa 1,Limpiar mesa,Paella valenciana,15,NwS6EcUhPCiBAJUGdWaZ
+Para Juan Carlos,Entregar a Juan Carlos para la mesa 1,Fabada asturiana,"13,5",LCA1vv0z0h8INTZfb7n4
+Para Juan Carlos,Entregar a Juan Carlos para la mesa 1,Paella valenciana,15,NwS6EcUhPCiBAJUGdWaZ
+Para Juan Carlos,Entregar a Juan Carlos para la mesa 1,Pulpo a la gallega,"7,45",zDnPfSyKQylgZ0AidYdG
+Para la chica rubia,Preguntar por bebidas,Lentejas,6,Yl37ZBRIMw4QMDcxcmxN
+Para la chica rubia,Preguntar por bebidas,Crema catalana,"4,3",vKxDbk4hqJW7nKWegW53
+Para la chica rubia,Preguntar por bebidas,Flan,3,RKX8P9G50td0B3SlruBw
+Solo postre,El cliente tiene prisa,Flan,3,RKX8P9G50td0B3SlruBw
+Crema catalana y rissoto,Traer ambas recien hechas,Crema catalana,"4,3",vKxDbk4hqJW7nKWegW53
+Crema catalana y rissoto,Traer ambas recien hechas,Risotto,4,a8nNggxHZXRTjmSj9p0V
+Fabada asturiana,Para la mesa cerca de la puerta,Fabada asturiana,"13,5",LCA1vv0z0h8INTZfb7n4
+Familia ,Mover mesas despues de entregar este pedido,Filete empanado con patatas,16,1WqRjgGejJljIYhHh28P
+Familia ,Mover mesas despues de entregar este pedido,Tortilla de patatas,"9,5",4D49aV5O2yBEwUslGkly
+Familia ,Mover mesas despues de entregar este pedido,Fabada asturiana,"13,5",LCA1vv0z0h8INTZfb7n4
+Familia ,Mover mesas despues de entregar este pedido,Crema catalana,"4,3",vKxDbk4hqJW7nKWegW53
+Familia mesa grande,Traer todos los platos a la vez,Crema catalana,"4,3",vKxDbk4hqJW7nKWegW53
+Familia mesa grande,Traer todos los platos a la vez,Tortilla de patatas,"9,5",4D49aV5O2yBEwUslGkly
+Familia mesa grande,Traer todos los platos a la vez,Flan,3,RKX8P9G50td0B3SlruBw
+Familia mesa grande,Traer todos los platos a la vez,Lentejas,6,Yl37ZBRIMw4QMDcxcmxN
+Pedido importante,Inspector de comida,Risotto,4,a8nNggxHZXRTjmSj9p0V
+Pedido importante,Inspector de comida,Crema catalana,"4,3",vKxDbk4hqJW7nKWegW53
+Pedido importante,Inspector de comida,Pulpo a la gallega,"7,45",zDnPfSyKQylgZ0AidYdG
+Pedido importante,Inspector de comida,Fabada asturiana,"13,5",LCA1vv0z0h8INTZfb7n4
