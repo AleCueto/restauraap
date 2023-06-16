@@ -9,6 +9,7 @@
 4. [Manual de uso](#uso-y-secciones)
 5. [Dependencias](#dependencias)
 6. [Bibliografía](#bibliografía)
+7. [Presentación](#presentación)
 
 
 ### Descripción:
@@ -114,7 +115,7 @@ click [aqui](https://github.com/AleCueto/restauraap/commits/)
 ![cambios](https://github.com/AleCueto/imagenes/blob/master/img.PNG)
 
 ## Presentación:
-En el siguiente enlace podrás descargar la presentación. (Si tienes cualquier problema contacta al correo alecuetocontacto@gmail.com)
+En el siguiente enlace podrás descargar la presentación. (Si tienes cualquier problema contacta al correo alecuetocontacto@gmail.com) <br/>
 https://drive.google.com/file/d/1H7TKPa0lAX-xzfwAE_f2xbOgyNXtvmXZ/view?usp=sharing
 
 ## Video de Checkpoint:
