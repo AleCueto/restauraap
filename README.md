@@ -126,6 +126,9 @@ click [aqui](https://github.com/AleCueto/restauraap/commits/)
 En el siguiente enlace podrás descargar la presentación. (Si tienes cualquier problema contacta al correo alecuetocontacto@gmail.com) <br/>
 https://drive.google.com/file/d/1H7TKPa0lAX-xzfwAE_f2xbOgyNXtvmXZ/view?usp=sharing
 
+## Video final:
+Este es el video final de presentación de la aplicación web de restaurapp:  <br/>
+[![Alt text](https://github.com/AleCueto/imagenes/blob/master/restaurapp/dishes.PNG)](https://youtu.be/bwefl1zbccg)
 
 ## Video de Checkpoint:
 [![Alt text](https://img.youtube.com/vi/qk3atJxrR8Q/0.jpg)](https://youtu.be/qk3atJxrR8Q)
