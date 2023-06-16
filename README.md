@@ -11,6 +11,7 @@
 6. [Bibliografía](#bibliografía)
 7. [Presentación](#presentación)
 8. [Gestión de proyecto](#gestión-de-proyecto)
+9. [Video final](#video-final)
 
 
 ### Descripción:
