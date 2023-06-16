@@ -95,6 +95,7 @@ Como todos los modelos, el camarero se crea, lista edita y borra.
 Las comandas se listan en esta pantalla. Son el único modelo que no se modifica desde esta página, porque está orientada a usarse por el dueño del local y las comandas las redactan los camareros desde la app móvil.<br />
 Se pueden ver aquí los platos que hay asignados a cada comanda, además contamos con un título y una pequeña descripción que pueden servir para la mejor monitorización de las mismas. <br />
 Tras esto, debemos ejecutar los archivos "[commands.py](https://github.com/AleCueto/restauraap/blob/master/src/app/core/python/commands.py)" y "[dishes.py](https://github.com/AleCueto/restauraap/blob/master/src/app/core/python/dishes.py)". <br />
+Para generar el reporte debemos dar al botón "descargar json" en la sección de comandas, después copiaremos el contenido al archivo "datos.json" en la carpeta python <br />
 Tras esto se habrán generado dos archivos llamados commands.csv y dishes.csv. <br />
 Simplemente los pasamos al informe de power BI y este nos dará información muy interesante. <br />
 ![comands](https://github.com/AleCueto/imagenes/blob/master/restaurapp/commands.PNG)  <br />
