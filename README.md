@@ -128,6 +128,8 @@ https://drive.google.com/file/d/1H7TKPa0lAX-xzfwAE_f2xbOgyNXtvmXZ/view?usp=shari
 
 ## Video final:
 Este es el video final de presentación de la aplicación web de restaurapp:  <br/>
+https://youtu.be/bwefl1zbccg  <br/>
+
 [![Alt text](https://img.youtube.com/vi/bwefl1zbccg/0.jpg)](https://youtu.be/bwefl1zbccg)
 
 ## Video de Checkpoint:
