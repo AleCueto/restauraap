@@ -135,3 +135,4 @@ Estos son algunos de los sitios que me han ayudado a hacer la aplicación. <br /
 [Pandas documentation](https://pandas.pydata.org/docs/) <br />
 [Garaje de ideas (Youtube)](https://www.youtube.com/@Garajedeideas) <br />
 [Tareando](https://github.com/juanarrow/tareando) <br />
+[Ionic Storage doc](https://github.com/ionic-team/ionic-storage#readme)<br />
