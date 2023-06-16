@@ -10,6 +10,7 @@
 5. [Dependencias](#dependencias)
 6. [Bibliografía](#bibliografía)
 7. [Presentación](#presentación)
+8. [Gestión de proyecto](#gestión-de-proyecto)
 
 
 ### Descripción:
@@ -55,7 +56,12 @@ Tras esto se nos abrirá el proyecto en local. <br/>
 
 Aunque para usar la aplicación, solo necesitas ir al siguiente enlace: 
 https://restauraap-69c20.web.app/login
- 
+
+## Gestión proyecto:
+El desarrollo se ha hecho con la ayuda de Trello. Aquí el enlace para ver el tablero: https://trello.com/invite/b/99prGEWm/ATTIcc8b15cb059fa351960d4b0215bd795663E3861F/tfg  <br/>
+Esta es ua imagen del tablero en cuestión: <br/>
+![trello](https://github.com/AleCueto/imagenes/blob/master/restaurapp/trello.PNG)
+
  ## Uso y secciones:
 La aplicación consta de seis páginas, las cuales vamos a ir desglosando y explicando en esta sección.
 ### Home:
