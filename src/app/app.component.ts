@@ -4,6 +4,7 @@ import { UserService } from './core/services/user.service';
 import { Router, RouterOutlet } from '@angular/router';
 import { AlertController, IonRouterOutlet, MenuController } from '@ionic/angular';
 import { lastValueFrom } from 'rxjs';
+import { Storage, IonicStorageModule } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-root',
@@ -28,14 +29,38 @@ export class AppComponent {
     private userService:UserService,
     private router:Router,
     private menuController: MenuController,
-    private alert: AlertController
+    private alert: AlertController,
+    private storage: Storage
   ) {
-    this.translate.setDefaultLang('en');
+    // this.translate.setDefaultLang('en');
+    this.initializeApp()
   }
 
-  changeLanguage(lng:string){
-    this.translate.setDefaultLang(lng)
+  async initializeApp() {
+    // await this.userService.getUid;
+    const storedLanguage = localStorage.getItem("language");
+    const language = storedLanguage || 'en';
+    this.translate.setDefaultLang(language);
+    console.log( localStorage.getItem("language"))
   }
+
+  async changeLanguage(lng:string){
+    this.translate.setDefaultLang(lng)
+    localStorage.setItem("language", lng);
+    console.log( localStorage.getItem("language"))
+  }
+
+  async ngOnInit() {
+    // If using a custom driver:
+    // await this.storage.defineDriver(MyCustomDriver)
+    // await this.storage.create();
+    // console.log(await this.storage.get(this.userService.getUid()+"language"))
+    // if(await this.storage.get(this.userService.getUid()+"language")){
+    //   console.log(await this.storage?.get(this.userService.getUid()+"language"))
+    //   this.changeLanguage(await this.storage?.get(this.userService.getUid()+"language"));
+    // }
+  }
+
 
   logout(){
     this.closeMenuToggle();
