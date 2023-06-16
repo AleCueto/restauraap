@@ -91,7 +91,7 @@ También se puede observar cual de ellos está ocupado gracias a la casilla que 
 Como todos los modelos, el camarero se crea, lista edita y borra.
 ![waiters](https://github.com/AleCueto/imagenes/blob/master/restaurapp/waiters.PNG)
 
-### Commands:
+### Comandas:
 Las comandas se listan en esta pantalla. Son el único modelo que no se modifica desde esta página, porque está orientada a usarse por el dueño del local y las comandas las redactan los camareros desde la app móvil.<br />
 Se pueden ver aquí los platos que hay asignados a cada comanda, además contamos con un título y una pequeña descripción que pueden servir para la mejor monitorización de las mismas. <br />
 Tras esto, debemos ejecutar los archivos "[commands.py](https://github.com/AleCueto/restauraap/blob/master/src/app/core/python/commands.py)" y "[dishes.py](https://github.com/AleCueto/restauraap/blob/master/src/app/core/python/dishes.py)". <br />
