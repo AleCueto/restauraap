@@ -119,7 +119,7 @@ En el siguiente enlace podrás descargar la presentación. (Si tienes cualquier 
 https://drive.google.com/file/d/1H7TKPa0lAX-xzfwAE_f2xbOgyNXtvmXZ/view?usp=sharing
 
 ## Informe:
-Si deseas descargar el informe de prueba y los datos del mismo, puedes hacerlo desde el siguiente enlace: <br/>
+Si deseas descargar el informe de prueba y los datos del mismo, puedes hacerlo desde el siguiente enlace (Si tienes cualquier problema contacta al correo alecuetocontacto@gmail.com): <br/>
 https://drive.google.com/drive/folders/1U3a-Ak-Bi7ee59Q3qj5bJalPpBh9ebdW?usp=sharing
 
 ## Video de Checkpoint:
