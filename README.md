@@ -101,7 +101,9 @@ Tras esto se habrán generado dos archivos llamados commands.csv y dishes.csv. <
 Simplemente los pasamos al informe de power BI y este nos dará información muy interesante. <br />
 ![comands](https://github.com/AleCueto/imagenes/blob/master/restaurapp/commands.PNG)  <br />
 
-### Reporte:
+### Informe:
+Si deseas descargar el informe de prueba y los datos del mismo, puedes hacerlo desde el siguiente enlace (Si tienes cualquier problema contacta al correo alecuetocontacto@gmail.com): <br/>
+https://drive.google.com/drive/folders/1U3a-Ak-Bi7ee59Q3qj5bJalPpBh9ebdW?usp=sharing <br />
 ![report-1](https://github.com/AleCueto/imagenes/blob/master/restaurapp/report-1.PNG)  <br />
 ![report-2](https://github.com/AleCueto/imagenes/blob/master/restaurapp/report-2.PNG)
 
@@ -118,9 +120,6 @@ click [aqui](https://github.com/AleCueto/restauraap/commits/)
 En el siguiente enlace podrás descargar la presentación. (Si tienes cualquier problema contacta al correo alecuetocontacto@gmail.com) <br/>
 https://drive.google.com/file/d/1H7TKPa0lAX-xzfwAE_f2xbOgyNXtvmXZ/view?usp=sharing
 
-## Informe:
-Si deseas descargar el informe de prueba y los datos del mismo, puedes hacerlo desde el siguiente enlace (Si tienes cualquier problema contacta al correo alecuetocontacto@gmail.com): <br/>
-https://drive.google.com/drive/folders/1U3a-Ak-Bi7ee59Q3qj5bJalPpBh9ebdW?usp=sharing
 
 ## Video de Checkpoint:
 [![Alt text](https://img.youtube.com/vi/qk3atJxrR8Q/0.jpg)](https://youtu.be/qk3atJxrR8Q)
